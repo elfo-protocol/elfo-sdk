@@ -1,0 +1,81 @@
+[@subrina-protocol/sdk](../README.md) / [Exports](../modules.md) / Subscriber
+
+# Class: Subscriber
+
+Represents a subscriber account
+
+## Table of contents
+
+### Properties
+
+- [authority](Subscriber.md#authority)
+- [hasAlreadyBeenInitialized](Subscriber.md#hasalreadybeeninitialized)
+- [subscriberPaymentAccount](Subscriber.md#subscriberpaymentaccount)
+- [subscriptionAccounts](Subscriber.md#subscriptionaccounts)
+
+### Methods
+
+- [from](Subscriber.md#from)
+
+## Properties
+
+### authority
+
+• **authority**: `PublicKey`
+
+#### Defined in
+
+state/subscriber.ts:10
+
+___
+
+### hasAlreadyBeenInitialized
+
+• **hasAlreadyBeenInitialized**: `boolean`
+
+#### Defined in
+
+state/subscriber.ts:9
+
+___
+
+### subscriberPaymentAccount
+
+• **subscriberPaymentAccount**: `PublicKey`
+
+#### Defined in
+
+state/subscriber.ts:11
+
+___
+
+### subscriptionAccounts
+
+• **subscriptionAccounts**: `PublicKey`[]
+
+#### Defined in
+
+state/subscriber.ts:12
+
+## Methods
+
+### from
+
+▸ `Static` **from**(`subscriberPublicKey`, `provider`): `Promise`<[`Subscriber`](Subscriber.md)\>
+
+Fetches a subscriber instance from a public key
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `subscriberPublicKey` | `PublicKey` | Public key of the subscription |
+| `provider` | `default` | Anchor connection provider |
+
+#### Returns
+
+`Promise`<[`Subscriber`](Subscriber.md)\>
+
+#### Defined in
+
+state/subscriber.ts:26
