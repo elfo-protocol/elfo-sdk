@@ -3,10 +3,8 @@ import { Program, Provider } from '@project-serum/anchor';
 import { SubrinaProtocol } from './types/subrina_protocol';
 import { idl } from './types/subrina_protocol_idl';
 import { PublicKey } from '@solana/web3.js';
+import { DEFAULT_PROGRAM_ID } from './constants';
 const utf8 = anchor.utils.bytes.utf8;
-
-export const DEFAULT_PROGRAM_ID = new PublicKey('FWrg3R4FVkLDaxcA6uYsGhV4hDpKWxu7AgoFUuWGKYUP');
-export const DEFAULT_USDC_MINT = new PublicKey('FWrg3R4FVkLDaxcA6uYsGhV4hDpKWxu7AgoFUuWGKYUP');
 
 let _program: Program<SubrinaProtocol> | undefined = undefined;
 let _protocolSigner: PublicKey | undefined;

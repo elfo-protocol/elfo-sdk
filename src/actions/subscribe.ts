@@ -1,9 +1,10 @@
 import * as anchor from '@project-serum/anchor';
 import { Provider, BN } from '@project-serum/anchor';
 import { PublicKey, SystemProgram, SYSVAR_RENT_PUBKEY, Transaction, SYSVAR_CLOCK_PUBKEY } from '@solana/web3.js';
-import { DEFAULT_USDC_MINT, getProgram, getProtocolSigner } from '../program';
+import { getProgram, getProtocolSigner } from '../program';
 import { getAssociatedTokenAddress, TOKEN_PROGRAM_ID } from '@solana/spl-token';
-import { SubscriptionPlan } from 'src/state/subscriptionPlan';
+import { SubscriptionPlan } from '../state/subscriptionPlan';
+import { DEFAULT_USDC_MINT } from '../constants';
 const utf8 = anchor.utils.bytes.utf8;
 
 /**

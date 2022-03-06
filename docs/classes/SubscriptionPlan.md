@@ -30,7 +30,7 @@ Represents a subscription plan
 
 #### Defined in
 
-[state/subscriptionPlan.ts:13](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/subscriptionPlan.ts#L13)
+[state/subscriptionPlan.ts:13](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/state/subscriptionPlan.ts#L13)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 #### Defined in
 
-[state/subscriptionPlan.ts:16](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/subscriptionPlan.ts#L16)
+[state/subscriptionPlan.ts:16](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/state/subscriptionPlan.ts#L16)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-[state/subscriptionPlan.ts:14](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/subscriptionPlan.ts#L14)
+[state/subscriptionPlan.ts:14](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/state/subscriptionPlan.ts#L14)
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 #### Defined in
 
-[state/subscriptionPlan.ts:9](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/subscriptionPlan.ts#L9)
+[state/subscriptionPlan.ts:9](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/state/subscriptionPlan.ts#L9)
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-[state/subscriptionPlan.ts:15](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/subscriptionPlan.ts#L15)
+[state/subscriptionPlan.ts:15](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/state/subscriptionPlan.ts#L15)
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 #### Defined in
 
-[state/subscriptionPlan.ts:10](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/subscriptionPlan.ts#L10)
+[state/subscriptionPlan.ts:10](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/state/subscriptionPlan.ts#L10)
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 #### Defined in
 
-[state/subscriptionPlan.ts:17](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/subscriptionPlan.ts#L17)
+[state/subscriptionPlan.ts:17](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/state/subscriptionPlan.ts#L17)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-[state/subscriptionPlan.ts:11](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/subscriptionPlan.ts#L11)
+[state/subscriptionPlan.ts:11](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/state/subscriptionPlan.ts#L11)
 
 ___
 
@@ -110,7 +110,7 @@ ___
 
 #### Defined in
 
-[state/subscriptionPlan.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/subscriptionPlan.ts#L12)
+[state/subscriptionPlan.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/state/subscriptionPlan.ts#L12)
 
 ## Methods
 
@@ -133,4 +133,4 @@ Fetches a subscription plan instance from a public key
 
 #### Defined in
 
-[state/subscriptionPlan.ts:31](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/subscriptionPlan.ts#L31)
+[state/subscriptionPlan.ts:31](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/state/subscriptionPlan.ts#L31)

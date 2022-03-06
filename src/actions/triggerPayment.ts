@@ -1,10 +1,12 @@
 import * as anchor from '@project-serum/anchor';
 import { Provider } from '@project-serum/anchor';
 import { PublicKey, Transaction, SYSVAR_CLOCK_PUBKEY } from '@solana/web3.js';
-import { DEFAULT_USDC_MINT, getProgram, getProtocolSigner } from '../program';
+import { getProgram, getProtocolSigner } from '../program';
 import { getAssociatedTokenAddress, TOKEN_PROGRAM_ID } from '@solana/spl-token';
-import { SubscriptionPlan } from 'src/state/subscriptionPlan';
-import { SubrinaNode, Subscription } from 'src';
+import { SubscriptionPlan } from '../state/subscriptionPlan';
+import { SubrinaNode } from '../state/node';
+import { DEFAULT_USDC_MINT } from '../constants';
+import { Subscription } from '../state/subscription';
 const utf8 = anchor.utils.bytes.utf8;
 
 /**

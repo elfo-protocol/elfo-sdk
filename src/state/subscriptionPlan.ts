@@ -1,6 +1,6 @@
 import { PublicKey } from '@solana/web3.js';
 import { BN, Provider } from '@project-serum/anchor';
-import { getProgram } from 'src/program';
+import { getProgram } from '../program';
 
 /**
  * Represents a subscription plan

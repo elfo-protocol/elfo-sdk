@@ -1,6 +1,6 @@
 import { PublicKey } from '@solana/web3.js';
 import { Provider } from '@project-serum/anchor';
-import { getProcolState, getProgram } from 'src/program';
+import { getProcolState, getProgram } from '../program';
 
 /**
  * Represents the subrina protocol state account

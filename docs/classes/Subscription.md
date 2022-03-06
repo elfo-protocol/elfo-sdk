@@ -29,7 +29,7 @@ Represents a subscription account
 
 #### Defined in
 
-[state/subscription.ts:16](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/subscription.ts#L16)
+[state/subscription.ts:16](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/state/subscription.ts#L16)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 #### Defined in
 
-[state/subscription.ts:9](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/subscription.ts#L9)
+[state/subscription.ts:9](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/state/subscription.ts#L9)
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 #### Defined in
 
-[state/subscription.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/subscription.ts#L12)
+[state/subscription.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/state/subscription.ts#L12)
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 #### Defined in
 
-[state/subscription.ts:13](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/subscription.ts#L13)
+[state/subscription.ts:13](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/state/subscription.ts#L13)
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 #### Defined in
 
-[state/subscription.ts:14](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/subscription.ts#L14)
+[state/subscription.ts:14](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/state/subscription.ts#L14)
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 #### Defined in
 
-[state/subscription.ts:15](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/subscription.ts#L15)
+[state/subscription.ts:15](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/state/subscription.ts#L15)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-[state/subscription.ts:10](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/subscription.ts#L10)
+[state/subscription.ts:10](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/state/subscription.ts#L10)
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 #### Defined in
 
-[state/subscription.ts:11](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/subscription.ts#L11)
+[state/subscription.ts:11](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/state/subscription.ts#L11)
 
 ## Methods
 
@@ -122,4 +122,4 @@ Fetches a subscription instance from a public key
 
 #### Defined in
 
-[state/subscription.ts:30](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/subscription.ts#L30)
+[state/subscription.ts:30](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/state/subscription.ts#L30)
