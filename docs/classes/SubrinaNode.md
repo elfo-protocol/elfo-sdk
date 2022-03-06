@@ -25,7 +25,7 @@ Represents a subrina node account
 
 #### Defined in
 
-state/node.ts:10
+[state/node.ts:10](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/node.ts#L10)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 #### Defined in
 
-state/node.ts:9
+[state/node.ts:9](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/node.ts#L9)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 #### Defined in
 
-state/node.ts:12
+[state/node.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/node.ts#L12)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 #### Defined in
 
-state/node.ts:11
+[state/node.ts:11](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/node.ts#L11)
 
 ## Methods
 
@@ -78,4 +78,4 @@ Fetches a node instance from a public key
 
 #### Defined in
 
-state/node.ts:26
+[state/node.ts:26](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/node.ts#L26)

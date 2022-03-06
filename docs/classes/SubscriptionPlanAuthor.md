@@ -31,4 +31,4 @@ Fetches a subscription plan author instance from a public key
 
 #### Defined in
 
-state/subscriptionPlanAuthor.ts:21
+[state/subscriptionPlanAuthor.ts:21](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/subscriptionPlanAuthor.ts#L21)

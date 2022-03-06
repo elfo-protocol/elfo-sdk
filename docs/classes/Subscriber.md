@@ -25,7 +25,7 @@ Represents a subscriber account
 
 #### Defined in
 
-state/subscriber.ts:10
+[state/subscriber.ts:10](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/subscriber.ts#L10)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 #### Defined in
 
-state/subscriber.ts:9
+[state/subscriber.ts:9](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/subscriber.ts#L9)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 #### Defined in
 
-state/subscriber.ts:11
+[state/subscriber.ts:11](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/subscriber.ts#L11)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 #### Defined in
 
-state/subscriber.ts:12
+[state/subscriber.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/subscriber.ts#L12)
 
 ## Methods
 
@@ -78,4 +78,4 @@ Fetches a subscriber instance from a public key
 
 #### Defined in
 
-state/subscriber.ts:26
+[state/subscriber.ts:26](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/subscriber.ts#L26)

@@ -19,4 +19,4 @@ npm -i @subrina-protocol/sdk
 ```
 
 ## Usage
-View api documentation [here](docs-md/modules.md)
+View api documentation [here](docs/modules.md)

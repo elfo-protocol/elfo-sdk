@@ -57,7 +57,7 @@ Public key tuple [subscriptionPlan, subscriptionPlanAuthor] of plan and plan aut
 
 #### Defined in
 
-actions/createSubscription.ts:28
+[actions/createSubscription.ts:28](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/actions/createSubscription.ts#L28)
 
 ___
 
@@ -86,7 +86,7 @@ Subscriber public key
 
 #### Defined in
 
-actions/initializeSubscriber.ts:20
+[actions/initializeSubscriber.ts:20](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/actions/initializeSubscriber.ts#L20)
 
 ___
 
@@ -117,7 +117,7 @@ Node public key
 
 #### Defined in
 
-actions/registerNode.ts:22
+[actions/registerNode.ts:22](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/actions/registerNode.ts#L22)
 
 ___
 
@@ -151,7 +151,7 @@ Subscription public key
 
 #### Defined in
 
-actions/subscribe.ts:24
+[actions/subscribe.ts:24](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/actions/subscribe.ts#L24)
 
 ___
 
@@ -182,7 +182,7 @@ await triggerPayment(provider, subscription);
 
 #### Defined in
 
-actions/triggerPayment.ts:23
+[actions/triggerPayment.ts:23](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/actions/triggerPayment.ts#L23)
 
 ___
 
@@ -213,4 +213,4 @@ await unsubscribe(provider, subscriptionPlan);
 
 #### Defined in
 
-actions/unsubscribe.ts:19
+[actions/unsubscribe.ts:19](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/actions/unsubscribe.ts#L19)

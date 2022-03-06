@@ -25,7 +25,7 @@ Represents the subrina protocol state account
 
 #### Defined in
 
-state/protocol.ts:10
+[state/protocol.ts:10](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/protocol.ts#L10)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 #### Defined in
 
-state/protocol.ts:9
+[state/protocol.ts:9](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/protocol.ts#L9)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 #### Defined in
 
-state/protocol.ts:12
+[state/protocol.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/protocol.ts#L12)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 #### Defined in
 
-state/protocol.ts:11
+[state/protocol.ts:11](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/protocol.ts#L11)
 
 ## Methods
 
@@ -77,4 +77,4 @@ Fetches the protocol state
 
 #### Defined in
 
-state/protocol.ts:25
+[state/protocol.ts:25](https://github.com/subrina-protocol/subrina-sdk/blob/9b2be85/src/state/protocol.ts#L25)
