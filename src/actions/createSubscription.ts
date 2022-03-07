@@ -1,10 +1,11 @@
-import * as anchor from '@project-serum/anchor';
 import { Provider, BN } from '@project-serum/anchor';
 import { PublicKey, SystemProgram, SYSVAR_RENT_PUBKEY, Transaction } from '@solana/web3.js';
-import { getProcolState, getProgram } from '../program';
+import { getProgram } from '../program';
 import { ASSOCIATED_TOKEN_PROGRAM_ID, getAssociatedTokenAddress, TOKEN_PROGRAM_ID } from '@solana/spl-token';
 import { DEFAULT_USDC_MINT } from '../constants';
-const utf8 = anchor.utils.bytes.utf8;
+import { SubscriptionPlanAuthor } from '../state/subscriptionPlanAuthor';
+import { SubscriptionPlan } from '../state/subscriptionPlan';
+import { ProtocolState } from '../state/protocol';
 
 /**
  * Creates a subscription plan
@@ -34,15 +35,8 @@ export const createSubscription = async (
   feePercentage: number,
 ): Promise<[PublicKey, PublicKey]> => {
   const program = getProgram(provider);
-  const [subscriptionPlanAuthor] = await PublicKey.findProgramAddress(
-    [utf8.encode('subscription_plan_author'), provider.wallet.publicKey.toBuffer()],
-    program.programId,
-  );
-
-  const [subscriptionPlan] = await PublicKey.findProgramAddress(
-    [utf8.encode('subscription_plan'), utf8.encode(name), subscriptionPlanAuthor.toBuffer()],
-    program.programId,
-  );
+  const subscriptionPlanAuthor = await SubscriptionPlanAuthor.address(provider.wallet.publicKey);
+  const subscriptionPlan = await SubscriptionPlan.address(name, subscriptionPlanAuthor);
 
   const ix = program.instruction.createSubscriptionPlan(
     name,
@@ -57,7 +51,7 @@ export const createSubscription = async (
         subscriptionPlanAuthor,
         subscriptionPlanPaymentAccount: await getAssociatedTokenAddress(DEFAULT_USDC_MINT, provider.wallet.publicKey),
         tokenProgram: TOKEN_PROGRAM_ID,
-        protocolState: await getProcolState(),
+        protocolState: await ProtocolState.protocolState(),
         rent: SYSVAR_RENT_PUBKEY,
         systemProgram: SystemProgram.programId,
         authority: provider.wallet.publicKey,

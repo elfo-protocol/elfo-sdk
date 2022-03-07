@@ -1,19 +1,19 @@
-import * as anchor from '@project-serum/anchor';
 import { Provider } from '@project-serum/anchor';
 import { PublicKey, Transaction, SYSVAR_CLOCK_PUBKEY } from '@solana/web3.js';
-import { getProgram, getProtocolSigner } from '../program';
+import { getProgram } from '../program';
 import { getAssociatedTokenAddress, TOKEN_PROGRAM_ID } from '@solana/spl-token';
 import { SubscriptionPlan } from '../state/subscriptionPlan';
 import { ElfoNode } from '../state/node';
 import { DEFAULT_USDC_MINT } from '../constants';
 import { Subscription } from '../state/subscription';
-const utf8 = anchor.utils.bytes.utf8;
+import { Subscriber } from '../state/subscriber';
+import { ProtocolState } from '../state/protocol';
 
 /**
  * Tries to trigger payment of a subscription.
  *
  * @param provider Anchor connection provider
- * @parma subscription Subscription to try trigger payment
+ * @param subscription Subscription to try trigger payment
  *
  * @example
  * ```typescript
@@ -24,19 +24,12 @@ const utf8 = anchor.utils.bytes.utf8;
  */
 export const triggerPayment = async (provider: Provider, subscription: PublicKey): Promise<void> => {
   const program = getProgram(provider);
-  const [subscriber] = await PublicKey.findProgramAddress(
-    [utf8.encode('state'), provider.wallet.publicKey.toBuffer()],
-    program.programId,
-  );
+  const subscriber = await Subscriber.address(provider.wallet.publicKey);
 
   const subscriptionAccount = await Subscription.from(subscription, provider);
   const subscriptionPlanAccount = await SubscriptionPlan.from(subscriptionAccount.subscriptionPlan, provider);
 
-  const [node] = await PublicKey.findProgramAddress(
-    [utf8.encode('node'), provider.wallet.publicKey.toBuffer()],
-    program.programId,
-  );
-
+  const node = await ElfoNode.address(provider.wallet.publicKey);
   const nodeAccount = await ElfoNode.from(node, provider);
 
   const ix = program.instruction.triggerPayment({
@@ -48,7 +41,7 @@ export const triggerPayment = async (provider: Provider, subscription: PublicKey
       clock: SYSVAR_CLOCK_PUBKEY,
       authority: provider.wallet.publicKey,
       subscriptionPlanPaymentAccount: subscriptionPlanAccount.subscriptionPlanPaymentAccount,
-      protocolSigner: await getProtocolSigner(),
+      protocolSigner: await ProtocolState.protocolSigner(),
       subscription,
       subscriberPaymentAccount: await getAssociatedTokenAddress(DEFAULT_USDC_MINT, provider.wallet.publicKey),
       subscriber,

@@ -16,6 +16,8 @@ Represents the elfo protocol state account
 ### Methods
 
 - [fetch](ProtocolState.md#fetch)
+- [protocolSigner](ProtocolState.md#protocolsigner)
+- [protocolState](ProtocolState.md#protocolstate)
 
 ## Properties
 
@@ -25,7 +27,7 @@ Represents the elfo protocol state account
 
 #### Defined in
 
-[state/protocol.ts:10](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/state/protocol.ts#L10)
+[state/protocol.ts:13](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/protocol.ts#L13)
 
 ___
 
@@ -35,7 +37,7 @@ ___
 
 #### Defined in
 
-[state/protocol.ts:9](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/state/protocol.ts#L9)
+[state/protocol.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/protocol.ts#L12)
 
 ___
 
@@ -45,7 +47,7 @@ ___
 
 #### Defined in
 
-[state/protocol.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/state/protocol.ts#L12)
+[state/protocol.ts:15](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/protocol.ts#L15)
 
 ___
 
@@ -55,7 +57,7 @@ ___
 
 #### Defined in
 
-[state/protocol.ts:11](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/state/protocol.ts#L11)
+[state/protocol.ts:14](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/protocol.ts#L14)
 
 ## Methods
 
@@ -77,4 +79,36 @@ Fetches the protocol state
 
 #### Defined in
 
-[state/protocol.ts:25](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/state/protocol.ts#L25)
+[state/protocol.ts:28](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/protocol.ts#L28)
+
+___
+
+### protocolSigner
+
+▸ `Static` **protocolSigner**(): `Promise`<`PublicKey`\>
+
+Returns the Elfo protocol signer account
+
+#### Returns
+
+`Promise`<`PublicKey`\>
+
+#### Defined in
+
+[state/protocol.ts:44](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/protocol.ts#L44)
+
+___
+
+### protocolState
+
+▸ `Static` **protocolState**(): `Promise`<`PublicKey`\>
+
+Returns ELgo protocol state account
+
+#### Returns
+
+`Promise`<`PublicKey`\>
+
+#### Defined in
+
+[state/protocol.ts:52](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/protocol.ts#L52)

@@ -1,5 +1,5 @@
 import { createSubscription } from './actions/createSubscription';
-import { initalizeProtocol } from './actions/initializeProtocol';
+import { initializeProtocol } from './actions/initializeProtocol';
 import { registerNode } from './actions/registerNode';
 import { subscribe } from './actions/subscribe';
 import { unsubscribe } from './actions/unsubscribe';
@@ -24,5 +24,5 @@ export {
   unsubscribe,
   registerNode,
   triggerPayment,
-  initalizeProtocol as _initalizeProtocol,
+  initializeProtocol as _initializeProtocol,
 };

@@ -1,10 +1,10 @@
-import * as anchor from '@project-serum/anchor';
 import { Provider } from '@project-serum/anchor';
 import { PublicKey, SystemProgram, SYSVAR_RENT_PUBKEY, Transaction } from '@solana/web3.js';
-import { getProcolState, getProgram } from '../program';
+import { getProgram } from '../program';
 import { ASSOCIATED_TOKEN_PROGRAM_ID, getAssociatedTokenAddress, TOKEN_PROGRAM_ID } from '@solana/spl-token';
 import { DEFAULT_USDC_MINT } from '../constants';
-const utf8 = anchor.utils.bytes.utf8;
+import { ElfoNode } from '../state/node';
+import { ProtocolState } from '../state/protocol';
 
 /**
  * Registers a node that monitor subscriptions
@@ -22,11 +22,7 @@ const utf8 = anchor.utils.bytes.utf8;
  */
 export const registerNode = async (provider: Provider, nodePaymentWallet: PublicKey): Promise<PublicKey> => {
   const program = getProgram(provider);
-  const [node] = await PublicKey.findProgramAddress(
-    [utf8.encode('node'), provider.wallet.publicKey.toBuffer()],
-    program.programId,
-  );
-
+  const node = await ElfoNode.address(provider.wallet.publicKey);
   const ix = program.instruction.registerNode({
     accounts: {
       mint: DEFAULT_USDC_MINT,
@@ -35,7 +31,7 @@ export const registerNode = async (provider: Provider, nodePaymentWallet: Public
       nodePaymentWallet,
       nodePaymentAccount: await getAssociatedTokenAddress(DEFAULT_USDC_MINT, nodePaymentWallet),
       tokenProgram: TOKEN_PROGRAM_ID,
-      protocolState: await getProcolState(),
+      protocolState: await ProtocolState.protocolSigner(),
       rent: SYSVAR_RENT_PUBKEY,
       systemProgram: SystemProgram.programId,
       authority: provider.wallet.publicKey,

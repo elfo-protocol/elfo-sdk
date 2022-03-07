@@ -15,6 +15,7 @@ Represents a subscriber account
 
 ### Methods
 
+- [address](Subscriber.md#address)
 - [from](Subscriber.md#from)
 
 ## Properties
@@ -25,7 +26,7 @@ Represents a subscriber account
 
 #### Defined in
 
-[state/subscriber.ts:10](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/state/subscriber.ts#L10)
+[state/subscriber.ts:13](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/subscriber.ts#L13)
 
 ___
 
@@ -35,7 +36,7 @@ ___
 
 #### Defined in
 
-[state/subscriber.ts:9](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/state/subscriber.ts#L9)
+[state/subscriber.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/subscriber.ts#L12)
 
 ___
 
@@ -45,7 +46,7 @@ ___
 
 #### Defined in
 
-[state/subscriber.ts:11](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/state/subscriber.ts#L11)
+[state/subscriber.ts:14](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/subscriber.ts#L14)
 
 ___
 
@@ -55,9 +56,33 @@ ___
 
 #### Defined in
 
-[state/subscriber.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/state/subscriber.ts#L12)
+[state/subscriber.ts:15](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/subscriber.ts#L15)
 
 ## Methods
+
+### address
+
+▸ `Static` **address**(`authority`): `Promise`<`PublicKey`\>
+
+Helper function to generate subscriber PDA Address
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `authority` | `PublicKey` | Public Key of subscriber authority |
+
+#### Returns
+
+`Promise`<`PublicKey`\>
+
+PDA of the subscriber account
+
+#### Defined in
+
+[state/subscriber.ts:48](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/subscriber.ts#L48)
+
+___
 
 ### from
 
@@ -78,4 +103,4 @@ Fetches a subscriber instance from a public key
 
 #### Defined in
 
-[state/subscriber.ts:26](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/state/subscriber.ts#L26)
+[state/subscriber.ts:29](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/subscriber.ts#L29)

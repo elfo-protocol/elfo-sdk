@@ -8,9 +8,34 @@ Represents a subscription plan author account
 
 ### Methods
 
+- [address](SubscriptionPlanAuthor.md#address)
 - [from](SubscriptionPlanAuthor.md#from)
 
 ## Methods
+
+### address
+
+▸ `Static` **address**(`authority`): `Promise`<`PublicKey`\>
+
+Helper function to generate subscription author PDA Address
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `authority` | `PublicKey` | Creator of the subscription plan |
+
+#### Returns
+
+`Promise`<`PublicKey`\>
+
+PDA of the subscription author account
+
+#### Defined in
+
+[state/subscriptionPlanAuthor.ts:46](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/subscriptionPlanAuthor.ts#L46)
+
+___
 
 ### from
 
@@ -22,7 +47,7 @@ Fetches a subscription plan author instance from a public key
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `subscriptionPlanAuthorPublicKey` | `PublicKey` | - |
+| `subscriptionPlanAuthorPublicKey` | `PublicKey` | Public key of the subscription plan author |
 | `provider` | `default` | Anchor connection provider |
 
 #### Returns
@@ -31,4 +56,4 @@ Fetches a subscription plan author instance from a public key
 
 #### Defined in
 
-[state/subscriptionPlanAuthor.ts:21](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/state/subscriptionPlanAuthor.ts#L21)
+[state/subscriptionPlanAuthor.ts:24](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/subscriptionPlanAuthor.ts#L24)

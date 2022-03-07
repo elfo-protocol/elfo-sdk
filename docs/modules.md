@@ -56,7 +56,7 @@ Public key tuple [subscriptionPlan, subscriptionPlanAuthor] of plan and plan aut
 
 #### Defined in
 
-[actions/createSubscription.ts:29](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/actions/createSubscription.ts#L29)
+[actions/createSubscription.ts:30](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/actions/createSubscription.ts#L30)
 
 ___
 
@@ -87,7 +87,7 @@ Node public key
 
 #### Defined in
 
-[actions/registerNode.ts:23](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/actions/registerNode.ts#L23)
+[actions/registerNode.ts:23](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/actions/registerNode.ts#L23)
 
 ___
 
@@ -96,8 +96,6 @@ ___
 ▸ **subscribe**(`provider`, `subscriptionPlan`, `numberOfCycles?`): `Promise`<`PublicKey`\>
 
 Subscribe to a subscription plan
-
-**`parma`** subscriptionPlan Subscription plan to subscribe
 
 **`example`**
 ```typescript
@@ -110,7 +108,7 @@ const subscription: PublicKey = await subscribe(provider, subscriptionPlan);
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `provider` | `default` | Anchor connection provider |
-| `subscriptionPlan` | `PublicKey` | - |
+| `subscriptionPlan` | `PublicKey` | Subscription plan to subscribe |
 | `numberOfCycles?` | `number` | number of cycle to delegate funds |
 
 #### Returns
@@ -121,7 +119,7 @@ Subscription public key
 
 #### Defined in
 
-[actions/subscribe.ts:26](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/actions/subscribe.ts#L26)
+[actions/subscribe.ts:27](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/actions/subscribe.ts#L27)
 
 ___
 
@@ -130,8 +128,6 @@ ___
 ▸ **triggerPayment**(`provider`, `subscription`): `Promise`<`void`\>
 
 Tries to trigger payment of a subscription.
-
-**`parma`** subscription Subscription to try trigger payment
 
 **`example`**
 ```typescript
@@ -144,7 +140,7 @@ await triggerPayment(provider, subscription);
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `provider` | `default` | Anchor connection provider |
-| `subscription` | `PublicKey` | - |
+| `subscription` | `PublicKey` | Subscription to try trigger payment |
 
 #### Returns
 
@@ -152,7 +148,7 @@ await triggerPayment(provider, subscription);
 
 #### Defined in
 
-[actions/triggerPayment.ts:25](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/actions/triggerPayment.ts#L25)
+[actions/triggerPayment.ts:25](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/actions/triggerPayment.ts#L25)
 
 ___
 
@@ -161,8 +157,6 @@ ___
 ▸ **unsubscribe**(`provider`, `subscriptionPlan`): `Promise`<`void`\>
 
 Unsubscribe from a subscription plan
-
-**`parma`** subscriptionPlan Subscription plan to unsubscribe from
 
 **`example`**
 ```typescript
@@ -175,7 +169,7 @@ await unsubscribe(provider, subscriptionPlan);
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `provider` | `default` | Anchor connection provider |
-| `subscriptionPlan` | `PublicKey` | - |
+| `subscriptionPlan` | `PublicKey` | Subscription plan to unsubscribe from |
 
 #### Returns
 
@@ -183,4 +177,4 @@ await unsubscribe(provider, subscriptionPlan);
 
 #### Defined in
 
-[actions/unsubscribe.ts:19](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/actions/unsubscribe.ts#L19)
+[actions/unsubscribe.ts:19](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/actions/unsubscribe.ts#L19)

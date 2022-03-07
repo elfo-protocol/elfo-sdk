@@ -1,6 +1,9 @@
 import { PublicKey } from '@solana/web3.js';
 import { Provider } from '@project-serum/anchor';
 import { getProgram } from '../program';
+import { DEFAULT_PROGRAM_ID } from '../constants';
+import * as anchor from '@project-serum/anchor';
+const utf8 = anchor.utils.bytes.utf8;
 
 /**
  * Represents a subscription plan author account
@@ -14,7 +17,7 @@ export class SubscriptionPlanAuthor {
   /**
    * Fetches a subscription plan author instance from a public key
    *
-   * @param subscriptionPublicKey Public key of the subscription plan author
+   * @param subscriptionPlanAuthorPublicKey Public key of the subscription plan author
    * @param provider Anchor connection provider
    *
    */
@@ -31,5 +34,20 @@ export class SubscriptionPlanAuthor {
       authority,
       subscriptionPlanAccounts,
     };
+  };
+
+  /**
+   * Helper function to generate subscription author PDA Address
+   *
+   * @param authority Creator of the subscription plan
+   *
+   * @returns PDA of the subscription author account
+   */
+  public static address = async (authority: PublicKey): Promise<PublicKey> => {
+    const [subscriptionPlanAuthor] = await PublicKey.findProgramAddress(
+      [utf8.encode('subscription_plan_author'), authority.toBuffer()],
+      DEFAULT_PROGRAM_ID,
+    );
+    return subscriptionPlanAuthor;
   };
 }

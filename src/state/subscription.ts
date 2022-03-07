@@ -1,6 +1,9 @@
 import { PublicKey } from '@solana/web3.js';
 import { Provider } from '@project-serum/anchor';
 import { getProgram } from '../program';
+import { DEFAULT_PROGRAM_ID } from '../constants';
+import * as anchor from '@project-serum/anchor';
+const utf8 = anchor.utils.bytes.utf8;
 
 /**
  * Represents a subscription account
@@ -51,5 +54,22 @@ export class Subscription {
       nextPaymentTimestamp: nextPaymentTimestamp.toNumber(),
       cancellationReason,
     };
+  };
+
+  /**
+   * Helper function to generate subscription PDA Address
+   *
+   * @param subscriber Public Key of subscriber state account
+   * @param subscriptionPlan Public Key of the subscription plan
+   *
+   * @returns PDA of the subscription account
+   */
+  public static address = async (subscriber: PublicKey, subscriptionPlan: PublicKey): Promise<PublicKey> => {
+    const [subscription] = await PublicKey.findProgramAddress(
+      [utf8.encode('subscription'), subscriber.toBuffer(), subscriptionPlan.toBuffer()],
+      DEFAULT_PROGRAM_ID,
+    );
+
+    return subscription;
   };
 }

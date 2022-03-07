@@ -1,6 +1,9 @@
 import { PublicKey } from '@solana/web3.js';
 import { Provider } from '@project-serum/anchor';
 import { getProgram } from '../program';
+import { DEFAULT_PROGRAM_ID } from '../constants';
+import * as anchor from '@project-serum/anchor';
+const utf8 = anchor.utils.bytes.utf8;
 
 /**
  * Represents a subscriber account
@@ -34,5 +37,19 @@ export class Subscriber {
       subscriberPaymentAccount,
       subscriptionAccounts,
     };
+  };
+
+  /**
+   * Helper function to generate subscriber PDA Address
+   *
+   * @param authority Public Key of subscriber authority
+   * @returns PDA of the subscriber account
+   */
+  public static address = async (authority: PublicKey): Promise<PublicKey> => {
+    const [subscriber] = await PublicKey.findProgramAddress(
+      [utf8.encode('state'), authority.toBuffer()],
+      DEFAULT_PROGRAM_ID,
+    );
+    return subscriber;
   };
 }

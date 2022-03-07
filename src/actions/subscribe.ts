@@ -1,18 +1,19 @@
-import * as anchor from '@project-serum/anchor';
 import { Provider, BN } from '@project-serum/anchor';
 import { PublicKey, SystemProgram, SYSVAR_RENT_PUBKEY, Transaction, SYSVAR_CLOCK_PUBKEY } from '@solana/web3.js';
-import { getProgram, getProtocolSigner } from '../program';
+import { getProgram } from '../program';
 import { getAssociatedTokenAddress, TOKEN_PROGRAM_ID } from '@solana/spl-token';
 import { SubscriptionPlan } from '../state/subscriptionPlan';
 import { DEFAULT_USDC_MINT } from '../constants';
 import { ASSOCIATED_PROGRAM_ID } from '@project-serum/anchor/dist/cjs/utils/token';
-const utf8 = anchor.utils.bytes.utf8;
+import { Subscriber } from '../state/subscriber';
+import { Subscription } from '../state/subscription';
+import { ProtocolState } from '../state/protocol';
 
 /**
  * Subscribe to a subscription plan
  *
  * @param provider Anchor connection provider
- * @parma subscriptionPlan Subscription plan to subscribe
+ * @param subscriptionPlan Subscription plan to subscribe
  * @param numberOfCycles  number of cycle to delegate funds
  *
  * @example
@@ -30,15 +31,8 @@ export const subscribe = async (
 ): Promise<PublicKey> => {
   const cyclesToDelegateFunds = numberOfCycles ? numberOfCycles : 1000;
   const program = getProgram(provider);
-  const [subscriber] = await PublicKey.findProgramAddress(
-    [utf8.encode('state'), provider.wallet.publicKey.toBuffer()],
-    program.programId,
-  );
-
-  const [subscription] = await PublicKey.findProgramAddress(
-    [utf8.encode('subscription'), subscriber.toBuffer(), subscriptionPlan.toBuffer()],
-    program.programId,
-  );
+  const subscriber = await Subscriber.address(provider.wallet.publicKey);
+  const subscription = await Subscription.address(subscriber, subscriptionPlan);
 
   const plan = await SubscriptionPlan.from(subscriptionPlan, provider);
 
@@ -48,7 +42,7 @@ export const subscribe = async (
       clock: SYSVAR_CLOCK_PUBKEY,
       whoSubscribes: provider.wallet.publicKey,
       subscriptionPlanPaymentAccount: plan.subscriptionPlanPaymentAccount,
-      protocolSigner: await getProtocolSigner(),
+      protocolSigner: await ProtocolState.protocolSigner(),
       subscriptionPlan,
       subscription,
       subscriberPaymentAccount: await getAssociatedTokenAddress(DEFAULT_USDC_MINT, provider.wallet.publicKey),

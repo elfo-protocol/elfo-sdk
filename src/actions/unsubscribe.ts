@@ -1,14 +1,14 @@
-import * as anchor from '@project-serum/anchor';
 import { Provider } from '@project-serum/anchor';
 import { PublicKey, Transaction } from '@solana/web3.js';
 import { getProgram } from '../program';
-const utf8 = anchor.utils.bytes.utf8;
+import { Subscriber } from '../state/subscriber';
+import { Subscription } from '../state/subscription';
 
 /**
  * Unsubscribe from a subscription plan
  *
  * @param provider Anchor connection provider
- * @parma subscriptionPlan Subscription plan to unsubscribe from
+ * @param subscriptionPlan Subscription plan to unsubscribe from
  *
  * @example
  * ```typescript
@@ -18,16 +18,8 @@ const utf8 = anchor.utils.bytes.utf8;
  */
 export const unsubscribe = async (provider: Provider, subscriptionPlan: PublicKey): Promise<void> => {
   const program = getProgram(provider);
-
-  const [subscriber] = await PublicKey.findProgramAddress(
-    [utf8.encode('state'), provider.wallet.publicKey.toBuffer()],
-    program.programId,
-  );
-
-  const [subscription] = await PublicKey.findProgramAddress(
-    [utf8.encode('subscription'), subscriber.toBuffer(), subscriptionPlan.toBuffer()],
-    program.programId,
-  );
+  const subscriber = await Subscriber.address(provider.wallet.publicKey);
+  const subscription = await Subscription.address(subscriber, subscriptionPlan);
 
   const ix = program.instruction.unsubscribe({
     accounts: {

@@ -15,6 +15,7 @@ Represents a elfo node account
 
 ### Methods
 
+- [address](ElfoNode.md#address)
 - [from](ElfoNode.md#from)
 
 ## Properties
@@ -25,7 +26,7 @@ Represents a elfo node account
 
 #### Defined in
 
-[state/node.ts:10](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/state/node.ts#L10)
+[state/node.ts:13](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/node.ts#L13)
 
 ___
 
@@ -35,7 +36,7 @@ ___
 
 #### Defined in
 
-[state/node.ts:9](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/state/node.ts#L9)
+[state/node.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/node.ts#L12)
 
 ___
 
@@ -45,7 +46,7 @@ ___
 
 #### Defined in
 
-[state/node.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/state/node.ts#L12)
+[state/node.ts:15](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/node.ts#L15)
 
 ___
 
@@ -55,9 +56,33 @@ ___
 
 #### Defined in
 
-[state/node.ts:11](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/state/node.ts#L11)
+[state/node.ts:14](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/node.ts#L14)
 
 ## Methods
+
+### address
+
+▸ `Static` **address**(`authority`): `Promise`<`PublicKey`\>
+
+Helper function to generate node PDA Address
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `authority` | `PublicKey` | Public Key of node authority |
+
+#### Returns
+
+`Promise`<`PublicKey`\>
+
+PDA of the node
+
+#### Defined in
+
+[state/node.ts:48](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/node.ts#L48)
+
+___
 
 ### from
 
@@ -78,4 +103,4 @@ Fetches a node instance from a public key
 
 #### Defined in
 
-[state/node.ts:26](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/state/node.ts#L26)
+[state/node.ts:29](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/node.ts#L29)

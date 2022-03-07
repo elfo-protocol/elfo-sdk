@@ -1,18 +1,19 @@
 import { Provider } from '@project-serum/anchor';
 import { SystemProgram, SYSVAR_RENT_PUBKEY, Transaction } from '@solana/web3.js';
-import { getProcolState, getProgram, getProtocolSigner } from '../program';
+import { getProgram } from '../program';
+import { ProtocolState } from '../state/protocol';
 
 /**
  * Initialize an instance of elfo protocol for debugging purposes.
  * This is generally not something you will want to do.
  * @ignore
  */
-export const initalizeProtocol = async (provider: Provider): Promise<void> => {
+export const initializeProtocol = async (provider: Provider): Promise<void> => {
   const program = getProgram(provider);
   const ix = program.instruction.initialize({
     accounts: {
-      protocolState: await getProcolState(),
-      protocolSigner: await getProtocolSigner(),
+      protocolState: await ProtocolState.protocolState(),
+      protocolSigner: await ProtocolState.protocolSigner(),
       rent: SYSVAR_RENT_PUBKEY,
       systemProgram: SystemProgram.programId,
       authority: provider.wallet.publicKey,
