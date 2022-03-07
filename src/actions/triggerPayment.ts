@@ -1,7 +1,7 @@
 import { Provider } from '@project-serum/anchor';
 import { PublicKey, Transaction, SYSVAR_CLOCK_PUBKEY } from '@solana/web3.js';
 import { getProgram } from '../program';
-import { getAssociatedTokenAddress, TOKEN_PROGRAM_ID } from '@solana/spl-token';
+import { TOKEN_PROGRAM_ID } from '@solana/spl-token';
 import { SubscriptionPlan } from '../state/subscriptionPlan';
 import { ElfoNode } from '../state/node';
 import { DEFAULT_USDC_MINT } from '../constants';
@@ -24,10 +24,13 @@ import { ProtocolState } from '../state/protocol';
  */
 export const triggerPayment = async (provider: Provider, subscription: PublicKey): Promise<void> => {
   const program = getProgram(provider);
-  const subscriber = await Subscriber.address(provider.wallet.publicKey);
-
   const subscriptionAccount = await Subscription.from(subscription, provider);
+  const subscriber = subscriptionAccount.subscriber;
+  const subscriberAccount = await Subscriber.from(subscriber, provider);
+
   const subscriptionPlanAccount = await SubscriptionPlan.from(subscriptionAccount.subscriptionPlan, provider);
+  const subscriptionPlanPaymentAccount = subscriptionPlanAccount.subscriptionPlanPaymentAccount;
+  const subscriberPaymentAccount = subscriberAccount.subscriberPaymentAccount;
 
   const node = await ElfoNode.address(provider.wallet.publicKey);
   const nodeAccount = await ElfoNode.from(node, provider);
@@ -40,10 +43,10 @@ export const triggerPayment = async (provider: Provider, subscription: PublicKey
       subscriptionPlan: subscriptionAccount.subscriptionPlan,
       clock: SYSVAR_CLOCK_PUBKEY,
       authority: provider.wallet.publicKey,
-      subscriptionPlanPaymentAccount: subscriptionPlanAccount.subscriptionPlanPaymentAccount,
+      subscriptionPlanPaymentAccount,
       protocolSigner: await ProtocolState.protocolSigner(),
       subscription,
-      subscriberPaymentAccount: await getAssociatedTokenAddress(DEFAULT_USDC_MINT, provider.wallet.publicKey),
+      subscriberPaymentAccount,
       subscriber,
       mint: DEFAULT_USDC_MINT,
       tokenProgram: TOKEN_PROGRAM_ID,
