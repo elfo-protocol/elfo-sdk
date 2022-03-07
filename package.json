@@ -1,13 +1,13 @@
 {
-  "name": "@subrina-protocol/sdk",
-  "version": "0.1.0",
-  "description": "Javascript library to interact with subrina protocol.",
+  "name": "@elfo/sdk",
+  "version": "0.0.1",
+  "description": "Javascript library to interact with elfo protocol.",
   "module": "./dist/esm/index.js",
   "main": "./dist/cjs/index.js",
   "browser": "./dist/browser/index.js",
   "license": "Apache-2.0",
   "types": "dist/cjs/index.d.ts",
-  "repository": "https://github.com/subrina-protocol/subrina-sdk",
+  "repository": "https://github.com/elfo-protocol/elfo-sdk",
   "author": "Irshad Nilam",
   "private": false,
   "devDependencies": {

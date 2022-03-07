@@ -1,18 +1,18 @@
 import * as anchor from '@project-serum/anchor';
 import { Program, Provider } from '@project-serum/anchor';
-import { SubrinaProtocol } from './types/subrina_protocol';
-import { idl } from './types/subrina_protocol_idl';
+import { ElfoProtocol } from './types/elfo_protocol';
+import { idl } from './types/elfo_protocol_idl';
 import { PublicKey } from '@solana/web3.js';
 import { DEFAULT_PROGRAM_ID } from './constants';
 const utf8 = anchor.utils.bytes.utf8;
 
-let _program: Program<SubrinaProtocol> | undefined = undefined;
+let _program: Program<ElfoProtocol> | undefined = undefined;
 let _protocolSigner: PublicKey | undefined;
 let _protocolState: PublicKey | undefined;
 
-export const getProgram = (provider: Provider): Program<SubrinaProtocol> => {
+export const getProgram = (provider: Provider): Program<ElfoProtocol> => {
   if (_program) return _program;
-  _program = new Program<SubrinaProtocol>(idl as SubrinaProtocol, DEFAULT_PROGRAM_ID, provider);
+  _program = new Program<ElfoProtocol>(idl as ElfoProtocol, DEFAULT_PROGRAM_ID, provider);
   return _program;
 };
 

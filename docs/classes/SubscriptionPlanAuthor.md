@@ -1,4 +1,4 @@
-[@subrina-protocol/sdk](../README.md) / [Exports](../modules.md) / SubscriptionPlanAuthor
+[@elfo/sdk](../README.md) / [Exports](../modules.md) / SubscriptionPlanAuthor
 
 # Class: SubscriptionPlanAuthor
 
@@ -31,4 +31,4 @@ Fetches a subscription plan author instance from a public key
 
 #### Defined in
 
-[state/subscriptionPlanAuthor.ts:21](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/state/subscriptionPlanAuthor.ts#L21)
+[state/subscriptionPlanAuthor.ts:21](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/state/subscriptionPlanAuthor.ts#L21)

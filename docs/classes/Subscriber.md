@@ -1,4 +1,4 @@
-[@subrina-protocol/sdk](../README.md) / [Exports](../modules.md) / Subscriber
+[@elfo/sdk](../README.md) / [Exports](../modules.md) / Subscriber
 
 # Class: Subscriber
 
@@ -25,7 +25,7 @@ Represents a subscriber account
 
 #### Defined in
 
-[state/subscriber.ts:10](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/state/subscriber.ts#L10)
+[state/subscriber.ts:10](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/state/subscriber.ts#L10)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 #### Defined in
 
-[state/subscriber.ts:9](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/state/subscriber.ts#L9)
+[state/subscriber.ts:9](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/state/subscriber.ts#L9)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 #### Defined in
 
-[state/subscriber.ts:11](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/state/subscriber.ts#L11)
+[state/subscriber.ts:11](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/state/subscriber.ts#L11)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 #### Defined in
 
-[state/subscriber.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/state/subscriber.ts#L12)
+[state/subscriber.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/state/subscriber.ts#L12)
 
 ## Methods
 
@@ -78,4 +78,4 @@ Fetches a subscriber instance from a public key
 
 #### Defined in
 
-[state/subscriber.ts:26](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/state/subscriber.ts#L26)
+[state/subscriber.ts:26](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/state/subscriber.ts#L26)

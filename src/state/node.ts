@@ -3,9 +3,9 @@ import { Provider } from '@project-serum/anchor';
 import { getProgram } from '../program';
 
 /**
- * Represents a subrina node account
+ * Represents a elfo node account
  */
-export class SubrinaNode {
+export class ElfoNode {
   public isRegistered: boolean;
   public authority: PublicKey;
   public nodePaymentWallet: PublicKey;
@@ -23,7 +23,7 @@ export class SubrinaNode {
    * @param provider Anchor connection provider
    *
    */
-  public static from = async (nodePublicKey: PublicKey, provider: Provider): Promise<SubrinaNode> => {
+  public static from = async (nodePublicKey: PublicKey, provider: Provider): Promise<ElfoNode> => {
     const program = getProgram(provider);
     const node = await program.account.node.fetch(nodePublicKey);
     const { isRegistered, authority, nodePaymentWallet, nodePaymentAccount } = node;

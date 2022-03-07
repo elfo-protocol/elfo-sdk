@@ -4,7 +4,7 @@ import { PublicKey, Transaction, SYSVAR_CLOCK_PUBKEY } from '@solana/web3.js';
 import { getProgram, getProtocolSigner } from '../program';
 import { getAssociatedTokenAddress, TOKEN_PROGRAM_ID } from '@solana/spl-token';
 import { SubscriptionPlan } from '../state/subscriptionPlan';
-import { SubrinaNode } from '../state/node';
+import { ElfoNode } from '../state/node';
 import { DEFAULT_USDC_MINT } from '../constants';
 import { Subscription } from '../state/subscription';
 const utf8 = anchor.utils.bytes.utf8;
@@ -37,7 +37,7 @@ export const triggerPayment = async (provider: Provider, subscription: PublicKey
     program.programId,
   );
 
-  const nodeAccount = await SubrinaNode.from(node, provider);
+  const nodeAccount = await ElfoNode.from(node, provider);
 
   const ix = program.instruction.triggerPayment({
     accounts: {

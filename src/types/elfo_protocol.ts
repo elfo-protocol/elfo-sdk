@@ -1,6 +1,6 @@
-export type SubrinaProtocol = {
+export type ElfoProtocol = {
   version: '0.1.0';
-  name: 'subrina_protocol';
+  name: 'elfo_protocol';
   instructions: [
     {
       name: 'initialize';
@@ -19,52 +19,6 @@ export type SubrinaProtocol = {
           name: 'authority';
           isMut: true;
           isSigner: true;
-        },
-        {
-          name: 'systemProgram';
-          isMut: false;
-          isSigner: false;
-        },
-        {
-          name: 'rent';
-          isMut: false;
-          isSigner: false;
-        },
-      ];
-      args: [];
-    },
-    {
-      name: 'initializeSubscriber';
-      accounts: [
-        {
-          name: 'whoSubscribes';
-          isMut: true;
-          isSigner: true;
-        },
-        {
-          name: 'subscriber';
-          isMut: true;
-          isSigner: false;
-        },
-        {
-          name: 'subscriberTokenAccount';
-          isMut: true;
-          isSigner: false;
-        },
-        {
-          name: 'mint';
-          isMut: false;
-          isSigner: false;
-        },
-        {
-          name: 'tokenProgram';
-          isMut: false;
-          isSigner: false;
-        },
-        {
-          name: 'associatedTokenProgram';
-          isMut: false;
-          isSigner: false;
         },
         {
           name: 'systemProgram';
@@ -124,6 +78,11 @@ export type SubrinaProtocol = {
         },
         {
           name: 'tokenProgram';
+          isMut: false;
+          isSigner: false;
+        },
+        {
+          name: 'associatedTokenProgram';
           isMut: false;
           isSigner: false;
         },
@@ -630,90 +589,95 @@ export type SubrinaProtocol = {
     },
     {
       code: 6001;
+      name: 'SubsscriberInvalidStateAccount';
+      msg: 'Invalid State account';
+    },
+    {
+      code: 6002;
       name: 'SubscriptionNotInitialized';
       msg: 'Subscription is not initialized.';
     },
     {
-      code: 6002;
+      code: 6003;
       name: 'SubscriptionAlreadySubscribed';
       msg: 'User is already subscribed to the plan.';
     },
     {
-      code: 6003;
+      code: 6004;
       name: 'SubscriptionNotSubscribed';
       msg: 'User is not subscribed to the plan.';
     },
     {
-      code: 6004;
+      code: 6005;
       name: 'SubscriptionNotEnoughFunds';
       msg: 'Not enough funds in protocol wallet to subscribe.';
     },
     {
-      code: 6005;
+      code: 6006;
       name: 'SubscriptionNextPaymentTimestampNotReached';
       msg: 'Next payment timestamp not reached. Please try again later.';
     },
     {
-      code: 6006;
+      code: 6007;
       name: 'SubscriptionPlanNotInitialized';
       msg: 'Subscription plan is not initialized.';
     },
     {
-      code: 6007;
+      code: 6008;
       name: 'SubscriptionPlanAmountInvalid';
       msg: 'Subscription amount must be in the range of 1 - 1000 USDC.';
     },
     {
-      code: 6008;
+      code: 6009;
       name: 'SubscriptionPlanInactive';
       msg: 'Subscription plan is inactive.';
     },
     {
-      code: 6009;
+      code: 6010;
       name: 'SubscriptionPlanAlreadyClosed';
       msg: 'Subscription plan is already closed.';
     },
     {
-      code: 6010;
+      code: 6011;
       name: 'SubscriptionPlanFrequencyError';
       msg: 'Subscription plan frequency must be atleast 60 seconds.';
     },
     {
-      code: 6011;
+      code: 6012;
       name: 'SubscriptionPlanUnauthorizedToClose';
       msg: 'Unauthorized to close subscription.';
     },
     {
-      code: 6012;
+      code: 6013;
       name: 'SubscriptionPlanInvalidPaymentAccount';
       msg: 'Invalid payment account provided.';
     },
     {
-      code: 6013;
+      code: 6014;
       name: 'SubscriptionPlanFeeError';
       msg: 'Fee percentage must be between 1% and 5%';
     },
     {
-      code: 6014;
+      code: 6015;
       name: 'InvalidMint';
       msg: 'Invalid mint.';
     },
     {
-      code: 6015;
+      code: 6016;
       name: 'NodeErrorUnauthorized';
       msg: 'Unauthorized to perform the action.';
     },
     {
-      code: 6016;
+      code: 6017;
       name: 'NodeNotRegistered';
       msg: 'Node not registered.';
     },
   ];
 };
 
-export const IDL: SubrinaProtocol = {
+export const IDL: ElfoProtocol = {
   version: '0.1.0',
-  name: 'subrina_protocol',
+  name: 'elfo_protocol',
   instructions: [
     {
       name: 'initialize',
@@ -732,52 +696,6 @@ export const IDL: SubrinaProtocol = {
           name: 'authority',
           isMut: true,
           isSigner: true,
-        },
-        {
-          name: 'systemProgram',
-          isMut: false,
-          isSigner: false,
-        },
-        {
-          name: 'rent',
-          isMut: false,
-          isSigner: false,
-        },
-      ],
-      args: [],
-    },
-    {
-      name: 'initializeSubscriber',
-      accounts: [
-        {
-          name: 'whoSubscribes',
-          isMut: true,
-          isSigner: true,
-        },
-        {
-          name: 'subscriber',
-          isMut: true,
-          isSigner: false,
-        },
-        {
-          name: 'subscriberTokenAccount',
-          isMut: true,
-          isSigner: false,
-        },
-        {
-          name: 'mint',
-          isMut: false,
-          isSigner: false,
-        },
-        {
-          name: 'tokenProgram',
-          isMut: false,
-          isSigner: false,
-        },
-        {
-          name: 'associatedTokenProgram',
-          isMut: false,
-          isSigner: false,
         },
         {
           name: 'systemProgram',
@@ -837,6 +755,11 @@ export const IDL: SubrinaProtocol = {
         },
         {
           name: 'tokenProgram',
+          isMut: false,
+          isSigner: false,
+        },
+        {
+          name: 'associatedTokenProgram',
           isMut: false,
           isSigner: false,
         },
@@ -1343,81 +1266,86 @@ export const IDL: SubrinaProtocol = {
     },
     {
       code: 6001,
+      name: 'SubsscriberInvalidStateAccount',
+      msg: 'Invalid State account',
+    },
+    {
+      code: 6002,
       name: 'SubscriptionNotInitialized',
       msg: 'Subscription is not initialized.',
     },
     {
-      code: 6002,
+      code: 6003,
       name: 'SubscriptionAlreadySubscribed',
       msg: 'User is already subscribed to the plan.',
     },
     {
-      code: 6003,
+      code: 6004,
       name: 'SubscriptionNotSubscribed',
       msg: 'User is not subscribed to the plan.',
     },
     {
-      code: 6004,
+      code: 6005,
       name: 'SubscriptionNotEnoughFunds',
       msg: 'Not enough funds in protocol wallet to subscribe.',
     },
     {
-      code: 6005,
+      code: 6006,
       name: 'SubscriptionNextPaymentTimestampNotReached',
       msg: 'Next payment timestamp not reached. Please try again later.',
     },
     {
-      code: 6006,
+      code: 6007,
       name: 'SubscriptionPlanNotInitialized',
       msg: 'Subscription plan is not initialized.',
     },
     {
-      code: 6007,
+      code: 6008,
       name: 'SubscriptionPlanAmountInvalid',
       msg: 'Subscription amount must be in the range of 1 - 1000 USDC.',
     },
     {
-      code: 6008,
+      code: 6009,
       name: 'SubscriptionPlanInactive',
       msg: 'Subscription plan is inactive.',
     },
     {
-      code: 6009,
+      code: 6010,
       name: 'SubscriptionPlanAlreadyClosed',
       msg: 'Subscription plan is already closed.',
     },
     {
-      code: 6010,
+      code: 6011,
       name: 'SubscriptionPlanFrequencyError',
       msg: 'Subscription plan frequency must be atleast 60 seconds.',
     },
     {
-      code: 6011,
+      code: 6012,
       name: 'SubscriptionPlanUnauthorizedToClose',
       msg: 'Unauthorized to close subscription.',
     },
     {
-      code: 6012,
+      code: 6013,
       name: 'SubscriptionPlanInvalidPaymentAccount',
       msg: 'Invalid payment account provided.',
     },
     {
-      code: 6013,
+      code: 6014,
       name: 'SubscriptionPlanFeeError',
       msg: 'Fee percentage must be between 1% and 5%',
     },
     {
-      code: 6014,
+      code: 6015,
       name: 'InvalidMint',
       msg: 'Invalid mint.',
     },
     {
-      code: 6015,
+      code: 6016,
       name: 'NodeErrorUnauthorized',
       msg: 'Unauthorized to perform the action.',
     },
     {
-      code: 6016,
+      code: 6017,
       name: 'NodeNotRegistered',
       msg: 'Node not registered.',
     },

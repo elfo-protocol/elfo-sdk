@@ -1,13 +1,13 @@
-[@subrina-protocol/sdk](README.md) / Exports
+[@elfo/sdk](README.md) / Exports
 
-# @subrina-protocol/sdk
+# @elfo/sdk
 
 ## Table of contents
 
 ### Classes
 
+- [ElfoNode](classes/ElfoNode.md)
 - [ProtocolState](classes/ProtocolState.md)
-- [SubrinaNode](classes/SubrinaNode.md)
 - [Subscriber](classes/Subscriber.md)
 - [Subscription](classes/Subscription.md)
 - [SubscriptionPlan](classes/SubscriptionPlan.md)
@@ -16,7 +16,6 @@
 ### Functions
 
 - [createSubscription](modules.md#createsubscription)
-- [initializeSubscriber](modules.md#initializesubscriber)
 - [registerNode](modules.md#registernode)
 - [subscribe](modules.md#subscribe)
 - [triggerPayment](modules.md#triggerpayment)
@@ -57,36 +56,7 @@ Public key tuple [subscriptionPlan, subscriptionPlanAuthor] of plan and plan aut
 
 #### Defined in
 
-[actions/createSubscription.ts:29](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/actions/createSubscription.ts#L29)
-
-___
-
-### initializeSubscriber
-
-▸ **initializeSubscriber**(`provider`): `Promise`<`PublicKey`\>
-
-Initialize a subscriber
-
-**`example`**
-```typescript
-const subscriber: PublicKey = await initializeSubscriber(provider);
-```
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `provider` | `default` | Anchor connection provider |
-
-#### Returns
-
-`Promise`<`PublicKey`\>
-
-Subscriber public key
-
-#### Defined in
-
-[actions/initializeSubscriber.ts:21](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/actions/initializeSubscriber.ts#L21)
+[actions/createSubscription.ts:29](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/actions/createSubscription.ts#L29)
 
 ___
 
@@ -117,7 +87,7 @@ Node public key
 
 #### Defined in
 
-[actions/registerNode.ts:23](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/actions/registerNode.ts#L23)
+[actions/registerNode.ts:23](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/actions/registerNode.ts#L23)
 
 ___
 
@@ -151,7 +121,7 @@ Subscription public key
 
 #### Defined in
 
-[actions/subscribe.ts:25](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/actions/subscribe.ts#L25)
+[actions/subscribe.ts:26](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/actions/subscribe.ts#L26)
 
 ___
 
@@ -182,7 +152,7 @@ await triggerPayment(provider, subscription);
 
 #### Defined in
 
-[actions/triggerPayment.ts:25](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/actions/triggerPayment.ts#L25)
+[actions/triggerPayment.ts:25](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/actions/triggerPayment.ts#L25)
 
 ___
 
@@ -213,4 +183,4 @@ await unsubscribe(provider, subscriptionPlan);
 
 #### Defined in
 
-[actions/unsubscribe.ts:19](https://github.com/subrina-protocol/subrina-sdk/blob/74b9272/src/actions/unsubscribe.ts#L19)
+[actions/unsubscribe.ts:19](https://github.com/subrina-protocol/subrina-sdk/blob/9a4120e/src/actions/unsubscribe.ts#L19)

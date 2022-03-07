@@ -3,7 +3,7 @@ import { Provider } from '@project-serum/anchor';
 import { getProcolState, getProgram } from '../program';
 
 /**
- * Represents the subrina protocol state account
+ * Represents the elfo protocol state account
  */
 export class ProtocolState {
   public hasAlreadyBeenInitialized: boolean;

@@ -3,7 +3,7 @@ import { SystemProgram, SYSVAR_RENT_PUBKEY, Transaction } from '@solana/web3.js'
 import { getProcolState, getProgram, getProtocolSigner } from '../program';
 
 /**
- * Initialize an instance of subrina protocol for debugging purposes.
+ * Initialize an instance of elfo protocol for debugging purposes.
  * This is generally not something you will want to do.
  * @ignore
  */

@@ -1,21 +1,21 @@
-@subrina-protocol/sdk / [Exports](modules.md)
+@elfo/sdk / [Exports](modules.md)
 
-# Subrina Protocol JavaScript SDK
+# Elfo Protocol JavaScript SDK
 
-This is the Javascript SDK to interract with [subrina protocol programs](https://github.com/subrina-protocol/subrina)
+This is the Javascript SDK to interract with [elfo protocol programs](https://github.com/elfo-protocol/elfo)
 
 ## Installation
 
 ### yarn
 
 ```
-yarn add @subrina-protocol/sdk
+yarn add @elfo-protocol/sdk
 ```
 
 ### npm
 
 ```
-npm -i @subrina-protocol/sdk
+npm -i @elfo-protocol/sdk
 ```
 
 ## Usage

@@ -5,6 +5,7 @@ import { getProgram, getProtocolSigner } from '../program';
 import { getAssociatedTokenAddress, TOKEN_PROGRAM_ID } from '@solana/spl-token';
 import { SubscriptionPlan } from '../state/subscriptionPlan';
 import { DEFAULT_USDC_MINT } from '../constants';
+import { ASSOCIATED_PROGRAM_ID } from '@project-serum/anchor/dist/cjs/utils/token';
 const utf8 = anchor.utils.bytes.utf8;
 
 /**
@@ -43,6 +44,7 @@ export const subscribe = async (
 
   const ix = program.instruction.subscribe(new BN(cyclesToDelegateFunds), {
     accounts: {
+      associatedTokenProgram: ASSOCIATED_PROGRAM_ID,
       clock: SYSVAR_CLOCK_PUBKEY,
       whoSubscribes: provider.wallet.publicKey,
       subscriptionPlanPaymentAccount: plan.subscriptionPlanPaymentAccount,
