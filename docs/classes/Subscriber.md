@@ -26,7 +26,7 @@ Represents a subscriber account
 
 #### Defined in
 
-[state/subscriber.ts:13](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/subscriber.ts#L13)
+[state/subscriber.ts:13](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/state/subscriber.ts#L13)
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 #### Defined in
 
-[state/subscriber.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/subscriber.ts#L12)
+[state/subscriber.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/state/subscriber.ts#L12)
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 #### Defined in
 
-[state/subscriber.ts:14](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/subscriber.ts#L14)
+[state/subscriber.ts:14](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/state/subscriber.ts#L14)
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 #### Defined in
 
-[state/subscriber.ts:15](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/subscriber.ts#L15)
+[state/subscriber.ts:15](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/state/subscriber.ts#L15)
 
 ## Methods
 
@@ -80,7 +80,7 @@ PDA of the subscriber account
 
 #### Defined in
 
-[state/subscriber.ts:48](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/subscriber.ts#L48)
+[state/subscriber.ts:48](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/state/subscriber.ts#L48)
 
 ___
 
@@ -103,4 +103,4 @@ Fetches a subscriber instance from a public key
 
 #### Defined in
 
-[state/subscriber.ts:29](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/subscriber.ts#L29)
+[state/subscriber.ts:29](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/state/subscriber.ts#L29)

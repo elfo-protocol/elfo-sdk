@@ -7,7 +7,7 @@ import { DEFAULT_USDC_MINT } from '../constants';
 import { ASSOCIATED_PROGRAM_ID } from '@project-serum/anchor/dist/cjs/utils/token';
 import { Subscriber } from '../state/subscriber';
 import { Subscription } from '../state/subscription';
-import { ProtocolState } from '../state/protocol';
+import { ELFO_PROTOCOL_SIGNER } from '../constants';
 
 /**
  * Subscribe to a subscription plan
@@ -42,7 +42,7 @@ export const subscribe = async (
       clock: SYSVAR_CLOCK_PUBKEY,
       whoSubscribes: provider.wallet.publicKey,
       subscriptionPlanPaymentAccount: plan.subscriptionPlanPaymentAccount,
-      protocolSigner: await ProtocolState.protocolSigner(),
+      protocolSigner: ELFO_PROTOCOL_SIGNER,
       subscriptionPlan,
       subscription,
       subscriberPaymentAccount: await getAssociatedTokenAddress(DEFAULT_USDC_MINT, provider.wallet.publicKey),

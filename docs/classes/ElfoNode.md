@@ -26,7 +26,7 @@ Represents a elfo node account
 
 #### Defined in
 
-[state/node.ts:13](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/node.ts#L13)
+[state/node.ts:13](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/state/node.ts#L13)
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 #### Defined in
 
-[state/node.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/node.ts#L12)
+[state/node.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/state/node.ts#L12)
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 #### Defined in
 
-[state/node.ts:15](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/node.ts#L15)
+[state/node.ts:15](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/state/node.ts#L15)
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 #### Defined in
 
-[state/node.ts:14](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/node.ts#L14)
+[state/node.ts:14](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/state/node.ts#L14)
 
 ## Methods
 
@@ -80,7 +80,7 @@ PDA of the node
 
 #### Defined in
 
-[state/node.ts:48](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/node.ts#L48)
+[state/node.ts:48](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/state/node.ts#L48)
 
 ___
 
@@ -103,4 +103,4 @@ Fetches a node instance from a public key
 
 #### Defined in
 
-[state/node.ts:29](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/node.ts#L29)
+[state/node.ts:29](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/state/node.ts#L29)

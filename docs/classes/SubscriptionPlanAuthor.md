@@ -33,7 +33,7 @@ PDA of the subscription author account
 
 #### Defined in
 
-[state/subscriptionPlanAuthor.ts:46](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/subscriptionPlanAuthor.ts#L46)
+[state/subscriptionPlanAuthor.ts:46](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/state/subscriptionPlanAuthor.ts#L46)
 
 ___
 
@@ -56,4 +56,4 @@ Fetches a subscription plan author instance from a public key
 
 #### Defined in
 
-[state/subscriptionPlanAuthor.ts:24](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/subscriptionPlanAuthor.ts#L24)
+[state/subscriptionPlanAuthor.ts:24](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/state/subscriptionPlanAuthor.ts#L24)

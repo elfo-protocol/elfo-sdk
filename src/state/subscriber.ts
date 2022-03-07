@@ -1,7 +1,7 @@
 import { PublicKey } from '@solana/web3.js';
 import { Provider } from '@project-serum/anchor';
 import { getProgram } from '../program';
-import { DEFAULT_PROGRAM_ID } from '../constants';
+import { ELFO_PROTOCOL_PROGRAM_ID } from '../constants';
 import * as anchor from '@project-serum/anchor';
 const utf8 = anchor.utils.bytes.utf8;
 
@@ -48,7 +48,7 @@ export class Subscriber {
   public static address = async (authority: PublicKey): Promise<PublicKey> => {
     const [subscriber] = await PublicKey.findProgramAddress(
       [utf8.encode('state'), authority.toBuffer()],
-      DEFAULT_PROGRAM_ID,
+      ELFO_PROTOCOL_PROGRAM_ID,
     );
     return subscriber;
   };

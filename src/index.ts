@@ -1,3 +1,4 @@
+import { ELFO_PROTOCOL_PROGRAM_ID, ELFO_PROTOCOL_SIGNER, ELFO_PROTOCOL_STATE } from './constants';
 import { createSubscription } from './actions/createSubscription';
 import { initializeProtocol } from './actions/initializeProtocol';
 import { registerNode } from './actions/registerNode';
@@ -13,6 +14,9 @@ import { ProtocolState } from './state/protocol';
 import { ElfoNode } from './state/node';
 
 export {
+  ELFO_PROTOCOL_PROGRAM_ID,
+  ELFO_PROTOCOL_SIGNER,
+  ELFO_PROTOCOL_STATE,
   SubscriptionPlan,
   Subscriber,
   Subscription,

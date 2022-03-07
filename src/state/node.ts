@@ -2,7 +2,7 @@ import { PublicKey } from '@solana/web3.js';
 import { Provider } from '@project-serum/anchor';
 import { getProgram } from '../program';
 import * as anchor from '@project-serum/anchor';
-import { DEFAULT_PROGRAM_ID } from '../constants';
+import { ELFO_PROTOCOL_PROGRAM_ID } from '../constants';
 const utf8 = anchor.utils.bytes.utf8;
 
 /**
@@ -46,7 +46,10 @@ export class ElfoNode {
    * @returns PDA of the node
    */
   public static address = async (authority: PublicKey): Promise<PublicKey> => {
-    const [node] = await PublicKey.findProgramAddress([utf8.encode('node'), authority.toBuffer()], DEFAULT_PROGRAM_ID);
+    const [node] = await PublicKey.findProgramAddress(
+      [utf8.encode('node'), authority.toBuffer()],
+      ELFO_PROTOCOL_PROGRAM_ID,
+    );
     return node;
   };
 }

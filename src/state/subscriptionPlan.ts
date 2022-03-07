@@ -1,7 +1,7 @@
 import { PublicKey } from '@solana/web3.js';
 import { BN, Provider } from '@project-serum/anchor';
 import { getProgram } from '../program';
-import { DEFAULT_PROGRAM_ID } from '../constants';
+import { ELFO_PROTOCOL_PROGRAM_ID } from '../constants';
 import * as anchor from '@project-serum/anchor';
 const utf8 = anchor.utils.bytes.utf8;
 
@@ -70,7 +70,7 @@ export class SubscriptionPlan {
   public static address = async (planName: string, planAuthor: PublicKey): Promise<PublicKey> => {
     const [subscriptionPlan] = await PublicKey.findProgramAddress(
       [utf8.encode('subscription_plan'), utf8.encode(planName), planAuthor.toBuffer()],
-      DEFAULT_PROGRAM_ID,
+      ELFO_PROTOCOL_PROGRAM_ID,
     );
     return subscriptionPlan;
   };

@@ -7,7 +7,7 @@ import { ElfoNode } from '../state/node';
 import { DEFAULT_USDC_MINT } from '../constants';
 import { Subscription } from '../state/subscription';
 import { Subscriber } from '../state/subscriber';
-import { ProtocolState } from '../state/protocol';
+import { ELFO_PROTOCOL_SIGNER } from '../constants';
 
 /**
  * Tries to trigger payment of a subscription.
@@ -44,7 +44,7 @@ export const triggerPayment = async (provider: Provider, subscription: PublicKey
       clock: SYSVAR_CLOCK_PUBKEY,
       authority: provider.wallet.publicKey,
       subscriptionPlanPaymentAccount,
-      protocolSigner: await ProtocolState.protocolSigner(),
+      protocolSigner: ELFO_PROTOCOL_SIGNER,
       subscription,
       subscriberPaymentAccount,
       subscriber,

@@ -13,6 +13,12 @@
 - [SubscriptionPlan](classes/SubscriptionPlan.md)
 - [SubscriptionPlanAuthor](classes/SubscriptionPlanAuthor.md)
 
+### Variables
+
+- [ELFO\_PROTOCOL\_PROGRAM\_ID](modules.md#elfo_protocol_program_id)
+- [ELFO\_PROTOCOL\_SIGNER](modules.md#elfo_protocol_signer)
+- [ELFO\_PROTOCOL\_STATE](modules.md#elfo_protocol_state)
+
 ### Functions
 
 - [createSubscription](modules.md#createsubscription)
@@ -20,6 +26,42 @@
 - [subscribe](modules.md#subscribe)
 - [triggerPayment](modules.md#triggerpayment)
 - [unsubscribe](modules.md#unsubscribe)
+
+## Variables
+
+### ELFO\_PROTOCOL\_PROGRAM\_ID
+
+• `Const` **ELFO\_PROTOCOL\_PROGRAM\_ID**: `PublicKey`
+
+Program ID of ELFO protocol core program
+
+#### Defined in
+
+[constants.ts:6](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/constants.ts#L6)
+
+___
+
+### ELFO\_PROTOCOL\_SIGNER
+
+• `Const` **ELFO\_PROTOCOL\_SIGNER**: `PublicKey`
+
+ ELFO Protocol signer account
+
+#### Defined in
+
+[constants.ts:11](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/constants.ts#L11)
+
+___
+
+### ELFO\_PROTOCOL\_STATE
+
+• `Const` **ELFO\_PROTOCOL\_STATE**: `PublicKey`
+
+ Elfo protocol state account
+
+#### Defined in
+
+[constants.ts:16](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/constants.ts#L16)
 
 ## Functions
 
@@ -56,7 +98,7 @@ Public key tuple [subscriptionPlan, subscriptionPlanAuthor] of plan and plan aut
 
 #### Defined in
 
-[actions/createSubscription.ts:30](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/actions/createSubscription.ts#L30)
+[actions/createSubscription.ts:30](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/actions/createSubscription.ts#L30)
 
 ___
 
@@ -87,7 +129,7 @@ Node public key
 
 #### Defined in
 
-[actions/registerNode.ts:23](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/actions/registerNode.ts#L23)
+[actions/registerNode.ts:23](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/actions/registerNode.ts#L23)
 
 ___
 
@@ -119,7 +161,7 @@ Subscription public key
 
 #### Defined in
 
-[actions/subscribe.ts:27](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/actions/subscribe.ts#L27)
+[actions/subscribe.ts:27](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/actions/subscribe.ts#L27)
 
 ___
 
@@ -148,7 +190,7 @@ await triggerPayment(provider, subscription);
 
 #### Defined in
 
-[actions/triggerPayment.ts:25](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/actions/triggerPayment.ts#L25)
+[actions/triggerPayment.ts:25](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/actions/triggerPayment.ts#L25)
 
 ___
 
@@ -177,4 +219,4 @@ await unsubscribe(provider, subscriptionPlan);
 
 #### Defined in
 
-[actions/unsubscribe.ts:19](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/actions/unsubscribe.ts#L19)
+[actions/unsubscribe.ts:19](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/actions/unsubscribe.ts#L19)

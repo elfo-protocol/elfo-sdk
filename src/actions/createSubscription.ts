@@ -5,7 +5,7 @@ import { ASSOCIATED_TOKEN_PROGRAM_ID, getAssociatedTokenAddress, TOKEN_PROGRAM_I
 import { DEFAULT_USDC_MINT } from '../constants';
 import { SubscriptionPlanAuthor } from '../state/subscriptionPlanAuthor';
 import { SubscriptionPlan } from '../state/subscriptionPlan';
-import { ProtocolState } from '../state/protocol';
+import { ELFO_PROTOCOL_STATE } from '../constants';
 
 /**
  * Creates a subscription plan
@@ -51,7 +51,7 @@ export const createSubscription = async (
         subscriptionPlanAuthor,
         subscriptionPlanPaymentAccount: await getAssociatedTokenAddress(DEFAULT_USDC_MINT, provider.wallet.publicKey),
         tokenProgram: TOKEN_PROGRAM_ID,
-        protocolState: await ProtocolState.protocolState(),
+        protocolState: ELFO_PROTOCOL_STATE,
         rent: SYSVAR_RENT_PUBKEY,
         systemProgram: SystemProgram.programId,
         authority: provider.wallet.publicKey,
