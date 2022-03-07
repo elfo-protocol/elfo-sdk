@@ -27,7 +27,7 @@ Represents the elfo protocol state account
 
 #### Defined in
 
-[state/protocol.ts:13](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/protocol.ts#L13)
+[state/protocol.ts:13](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/protocol.ts#L13)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 #### Defined in
 
-[state/protocol.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/protocol.ts#L12)
+[state/protocol.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/protocol.ts#L12)
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 #### Defined in
 
-[state/protocol.ts:15](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/protocol.ts#L15)
+[state/protocol.ts:15](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/protocol.ts#L15)
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 #### Defined in
 
-[state/protocol.ts:14](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/protocol.ts#L14)
+[state/protocol.ts:14](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/protocol.ts#L14)
 
 ## Methods
 
@@ -79,7 +79,7 @@ Fetches the protocol state
 
 #### Defined in
 
-[state/protocol.ts:28](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/protocol.ts#L28)
+[state/protocol.ts:28](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/protocol.ts#L28)
 
 ___
 
@@ -95,7 +95,7 @@ Returns the Elfo protocol signer account
 
 #### Defined in
 
-[state/protocol.ts:44](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/protocol.ts#L44)
+[state/protocol.ts:44](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/protocol.ts#L44)
 
 ___
 
@@ -111,4 +111,4 @@ Returns ELgo protocol state account
 
 #### Defined in
 
-[state/protocol.ts:52](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/protocol.ts#L52)
+[state/protocol.ts:52](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/protocol.ts#L52)

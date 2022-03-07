@@ -30,7 +30,7 @@ Represents a subscription account
 
 #### Defined in
 
-[state/subscription.ts:19](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/subscription.ts#L19)
+[state/subscription.ts:19](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/subscription.ts#L19)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 #### Defined in
 
-[state/subscription.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/subscription.ts#L12)
+[state/subscription.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/subscription.ts#L12)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-[state/subscription.ts:15](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/subscription.ts#L15)
+[state/subscription.ts:15](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/subscription.ts#L15)
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 #### Defined in
 
-[state/subscription.ts:16](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/subscription.ts#L16)
+[state/subscription.ts:16](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/subscription.ts#L16)
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-[state/subscription.ts:17](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/subscription.ts#L17)
+[state/subscription.ts:17](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/subscription.ts#L17)
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 #### Defined in
 
-[state/subscription.ts:18](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/subscription.ts#L18)
+[state/subscription.ts:18](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/subscription.ts#L18)
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 #### Defined in
 
-[state/subscription.ts:13](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/subscription.ts#L13)
+[state/subscription.ts:13](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/subscription.ts#L13)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-[state/subscription.ts:14](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/subscription.ts#L14)
+[state/subscription.ts:14](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/subscription.ts#L14)
 
 ## Methods
 
@@ -125,7 +125,7 @@ PDA of the subscription account
 
 #### Defined in
 
-[state/subscription.ts:67](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/subscription.ts#L67)
+[state/subscription.ts:67](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/subscription.ts#L67)
 
 ___
 
@@ -148,4 +148,4 @@ Fetches a subscription instance from a public key
 
 #### Defined in
 
-[state/subscription.ts:33](https://github.com/subrina-protocol/subrina-sdk/blob/65fbcf2/src/state/subscription.ts#L33)
+[state/subscription.ts:33](https://github.com/subrina-protocol/subrina-sdk/blob/f4b5296/src/state/subscription.ts#L33)
