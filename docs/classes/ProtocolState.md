@@ -25,7 +25,7 @@ Represents the elfo protocol state account
 
 #### Defined in
 
-[state/protocol.ts:11](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/state/protocol.ts#L11)
+[state/protocol.ts:11](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/protocol.ts#L11)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 #### Defined in
 
-[state/protocol.ts:10](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/state/protocol.ts#L10)
+[state/protocol.ts:10](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/protocol.ts#L10)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 #### Defined in
 
-[state/protocol.ts:13](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/state/protocol.ts#L13)
+[state/protocol.ts:13](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/protocol.ts#L13)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 #### Defined in
 
-[state/protocol.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/state/protocol.ts#L12)
+[state/protocol.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/protocol.ts#L12)
 
 ## Methods
 
@@ -77,4 +77,4 @@ Fetches the protocol state
 
 #### Defined in
 
-[state/protocol.ts:26](https://github.com/subrina-protocol/subrina-sdk/blob/21d16a2/src/state/protocol.ts#L26)
+[state/protocol.ts:26](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/protocol.ts#L26)

@@ -32,10 +32,10 @@ export default {
     }),
     terser(),
   ],
-  external: ['@project-serum/anchor', '@solana/web3.js', '@solana/spl-token'],
+  external: ['@project-serum/anchor', '@solana/spl-token', '@solana/web3.js'],
   output: {
     file: 'dist/browser/index.js',
-    format: 'es',
+    format: 'amd',
     sourcemap: true,
   },
 };
