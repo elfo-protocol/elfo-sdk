@@ -4,7 +4,7 @@ import { getProgram } from '../program';
 import { ASSOCIATED_TOKEN_PROGRAM_ID, getAssociatedTokenAddress, TOKEN_PROGRAM_ID } from '@solana/spl-token';
 import { DEFAULT_USDC_MINT } from '../constants';
 import { ElfoNode } from '../state/node';
-import { ELFO_PROTOCOL_SIGNER } from '../constants';
+import { ELFO_PROTOCOL_STATE } from '../constants';
 
 /**
  * Registers a node that monitor subscriptions
@@ -31,7 +31,7 @@ export const registerNode = async (provider: Provider, nodePaymentWallet: Public
       nodePaymentWallet,
       nodePaymentAccount: await getAssociatedTokenAddress(DEFAULT_USDC_MINT, nodePaymentWallet),
       tokenProgram: TOKEN_PROGRAM_ID,
-      protocolState: ELFO_PROTOCOL_SIGNER,
+      protocolState: ELFO_PROTOCOL_STATE,
       rent: SYSVAR_RENT_PUBKEY,
       systemProgram: SystemProgram.programId,
       authority: provider.wallet.publicKey,
