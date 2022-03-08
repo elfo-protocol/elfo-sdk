@@ -24,19 +24,11 @@ Represents a subscriber account
 
 • **authority**: `PublicKey`
 
-#### Defined in
-
-[state/subscriber.ts:13](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscriber.ts#L13)
-
 ___
 
 ### hasAlreadyBeenInitialized
 
 • **hasAlreadyBeenInitialized**: `boolean`
-
-#### Defined in
-
-[state/subscriber.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscriber.ts#L12)
 
 ___
 
@@ -44,19 +36,11 @@ ___
 
 • **subscriberPaymentAccount**: `PublicKey`
 
-#### Defined in
-
-[state/subscriber.ts:14](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscriber.ts#L14)
-
 ___
 
 ### subscriptionAccounts
 
 • **subscriptionAccounts**: `PublicKey`[]
-
-#### Defined in
-
-[state/subscriber.ts:15](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscriber.ts#L15)
 
 ## Methods
 
@@ -78,10 +62,6 @@ Helper function to generate subscriber PDA Address
 
 PDA of the subscriber account
 
-#### Defined in
-
-[state/subscriber.ts:48](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscriber.ts#L48)
-
 ___
 
 ### from
@@ -100,7 +80,3 @@ Fetches a subscriber instance from a public key
 #### Returns
 
 `Promise`<[`Subscriber`](Subscriber.md)\>
-
-#### Defined in
-
-[state/subscriber.ts:29](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscriber.ts#L29)

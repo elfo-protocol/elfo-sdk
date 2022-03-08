@@ -29,19 +29,11 @@ Represents a subscription plan
 
 • **amount**: `BN`
 
-#### Defined in
-
-[state/subscriptionPlan.ts:16](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscriptionPlan.ts#L16)
-
 ___
 
 ### feePercentage
 
 • **feePercentage**: `number`
-
-#### Defined in
-
-[state/subscriptionPlan.ts:19](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscriptionPlan.ts#L19)
 
 ___
 
@@ -49,19 +41,11 @@ ___
 
 • **frequency**: `BN`
 
-#### Defined in
-
-[state/subscriptionPlan.ts:17](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscriptionPlan.ts#L17)
-
 ___
 
 ### hasAlreadyBeenInitialized
 
 • **hasAlreadyBeenInitialized**: `boolean`
-
-#### Defined in
-
-[state/subscriptionPlan.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscriptionPlan.ts#L12)
 
 ___
 
@@ -69,19 +53,11 @@ ___
 
 • **isActive**: `boolean`
 
-#### Defined in
-
-[state/subscriptionPlan.ts:18](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscriptionPlan.ts#L18)
-
 ___
 
 ### planName
 
 • **planName**: `string`
-
-#### Defined in
-
-[state/subscriptionPlan.ts:13](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscriptionPlan.ts#L13)
 
 ___
 
@@ -89,29 +65,17 @@ ___
 
 • **subscriptionAccounts**: `PublicKey`[]
 
-#### Defined in
-
-[state/subscriptionPlan.ts:20](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscriptionPlan.ts#L20)
-
 ___
 
 ### subscriptionPlanAuthor
 
 • **subscriptionPlanAuthor**: `PublicKey`
 
-#### Defined in
-
-[state/subscriptionPlan.ts:14](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscriptionPlan.ts#L14)
-
 ___
 
 ### subscriptionPlanPaymentAccount
 
 • **subscriptionPlanPaymentAccount**: `PublicKey`
-
-#### Defined in
-
-[state/subscriptionPlan.ts:15](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscriptionPlan.ts#L15)
 
 ## Methods
 
@@ -134,10 +98,6 @@ Helper function to generate subscription plan PDA Address
 
 PDA of the subscription plan account
 
-#### Defined in
-
-[state/subscriptionPlan.ts:70](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscriptionPlan.ts#L70)
-
 ___
 
 ### from
@@ -156,7 +116,3 @@ Fetches a subscription plan instance from a public key
 #### Returns
 
 `Promise`<[`SubscriptionPlan`](SubscriptionPlan.md)\>
-
-#### Defined in
-
-[state/subscriptionPlan.ts:34](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscriptionPlan.ts#L34)

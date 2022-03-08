@@ -35,10 +35,6 @@
 
 Program ID of ELFO protocol core program
 
-#### Defined in
-
-[constants.ts:6](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/constants.ts#L6)
-
 ___
 
 ### ELFO\_PROTOCOL\_SIGNER
@@ -47,10 +43,6 @@ ___
 
  ELFO Protocol signer account
 
-#### Defined in
-
-[constants.ts:11](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/constants.ts#L11)
-
 ___
 
 ### ELFO\_PROTOCOL\_STATE
@@ -58,10 +50,6 @@ ___
 • `Const` **ELFO\_PROTOCOL\_STATE**: `PublicKey`
 
  Elfo protocol state account
-
-#### Defined in
-
-[constants.ts:16](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/constants.ts#L16)
 
 ## Functions
 
@@ -96,10 +84,6 @@ const [plan, author] = await createSubscription(provider, name, frequency, feePe
 
 Public key tuple [subscriptionPlan, subscriptionPlanAuthor] of plan and plan author
 
-#### Defined in
-
-[actions/createSubscription.ts:30](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/actions/createSubscription.ts#L30)
-
 ___
 
 ### registerNode
@@ -126,10 +110,6 @@ const nodeAddress: PublicKey = await registerNode(provider, nodePaymentWallet);
 `Promise`<`PublicKey`\>
 
 Node public key
-
-#### Defined in
-
-[actions/registerNode.ts:23](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/actions/registerNode.ts#L23)
 
 ___
 
@@ -159,10 +139,6 @@ const subscription: PublicKey = await subscribe(provider, subscriptionPlan);
 
 Subscription public key
 
-#### Defined in
-
-[actions/subscribe.ts:27](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/actions/subscribe.ts#L27)
-
 ___
 
 ### triggerPayment
@@ -188,10 +164,6 @@ await triggerPayment(provider, subscription);
 
 `Promise`<`void`\>
 
-#### Defined in
-
-[actions/triggerPayment.ts:25](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/actions/triggerPayment.ts#L25)
-
 ___
 
 ### unsubscribe
@@ -216,7 +188,3 @@ await unsubscribe(provider, subscriptionPlan);
 #### Returns
 
 `Promise`<`void`\>
-
-#### Defined in
-
-[actions/unsubscribe.ts:19](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/actions/unsubscribe.ts#L19)

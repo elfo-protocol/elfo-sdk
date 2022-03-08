@@ -28,19 +28,11 @@ Represents a subscription account
 
 • **cancellationReason**: `number`
 
-#### Defined in
-
-[state/subscription.ts:19](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscription.ts#L19)
-
 ___
 
 ### hasAlreadyBeenInitialized
 
 • **hasAlreadyBeenInitialized**: `boolean`
-
-#### Defined in
-
-[state/subscription.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscription.ts#L12)
 
 ___
 
@@ -48,19 +40,11 @@ ___
 
 • **isActive**: `boolean`
 
-#### Defined in
-
-[state/subscription.ts:15](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscription.ts#L15)
-
 ___
 
 ### isCancelled
 
 • **isCancelled**: `boolean`
-
-#### Defined in
-
-[state/subscription.ts:16](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscription.ts#L16)
 
 ___
 
@@ -68,19 +52,11 @@ ___
 
 • **lastPaymentTimestamp**: `number`
 
-#### Defined in
-
-[state/subscription.ts:17](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscription.ts#L17)
-
 ___
 
 ### nextPaymentTimestamp
 
 • **nextPaymentTimestamp**: `number`
-
-#### Defined in
-
-[state/subscription.ts:18](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscription.ts#L18)
 
 ___
 
@@ -88,19 +64,11 @@ ___
 
 • **subscriber**: `PublicKey`
 
-#### Defined in
-
-[state/subscription.ts:13](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscription.ts#L13)
-
 ___
 
 ### subscriptionPlan
 
 • **subscriptionPlan**: `PublicKey`
-
-#### Defined in
-
-[state/subscription.ts:14](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscription.ts#L14)
 
 ## Methods
 
@@ -123,10 +91,6 @@ Helper function to generate subscription PDA Address
 
 PDA of the subscription account
 
-#### Defined in
-
-[state/subscription.ts:67](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscription.ts#L67)
-
 ___
 
 ### from
@@ -145,7 +109,3 @@ Fetches a subscription instance from a public key
 #### Returns
 
 `Promise`<[`Subscription`](Subscription.md)\>
-
-#### Defined in
-
-[state/subscription.ts:33](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscription.ts#L33)

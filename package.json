@@ -35,7 +35,7 @@
     "build:node": "tsc && tsc -p tsconfig.cjs.json",
     "build:browser": "rollup --config",
     "lint": "eslint . --ext .ts --config .eslintrc.json",
-    "docs": "rimraf docs && typedoc --plugin typedoc-plugin-markdown --out docs src/index.ts"
+    "docs": "rimraf docs && typedoc --plugin typedoc-plugin-markdown --disableSources --out docs src/index.ts"
   },
   "dependencies": {
     "@project-serum/anchor": "^0.22.1",

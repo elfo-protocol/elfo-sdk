@@ -24,19 +24,11 @@ Represents a elfo node account
 
 • **authority**: `PublicKey`
 
-#### Defined in
-
-[state/node.ts:13](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/node.ts#L13)
-
 ___
 
 ### isRegistered
 
 • **isRegistered**: `boolean`
-
-#### Defined in
-
-[state/node.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/node.ts#L12)
 
 ___
 
@@ -44,19 +36,11 @@ ___
 
 • **nodePaymentAccount**: `PublicKey`
 
-#### Defined in
-
-[state/node.ts:15](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/node.ts#L15)
-
 ___
 
 ### nodePaymentWallet
 
 • **nodePaymentWallet**: `PublicKey`
-
-#### Defined in
-
-[state/node.ts:14](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/node.ts#L14)
 
 ## Methods
 
@@ -78,10 +62,6 @@ Helper function to generate node PDA Address
 
 PDA of the node
 
-#### Defined in
-
-[state/node.ts:48](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/node.ts#L48)
-
 ___
 
 ### from
@@ -100,7 +80,3 @@ Fetches a node instance from a public key
 #### Returns
 
 `Promise`<[`ElfoNode`](ElfoNode.md)\>
-
-#### Defined in
-
-[state/node.ts:29](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/node.ts#L29)

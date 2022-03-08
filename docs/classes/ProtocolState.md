@@ -23,19 +23,11 @@ Represents the elfo protocol state account
 
 • **authority**: `PublicKey`
 
-#### Defined in
-
-[state/protocol.ts:11](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/protocol.ts#L11)
-
 ___
 
 ### hasAlreadyBeenInitialized
 
 • **hasAlreadyBeenInitialized**: `boolean`
-
-#### Defined in
-
-[state/protocol.ts:10](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/protocol.ts#L10)
 
 ___
 
@@ -43,19 +35,11 @@ ___
 
 • **registeredNodes**: `PublicKey`[]
 
-#### Defined in
-
-[state/protocol.ts:13](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/protocol.ts#L13)
-
 ___
 
 ### subscriptionPlanAccounts
 
 • **subscriptionPlanAccounts**: `PublicKey`[]
-
-#### Defined in
-
-[state/protocol.ts:12](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/protocol.ts#L12)
 
 ## Methods
 
@@ -74,7 +58,3 @@ Fetches the protocol state
 #### Returns
 
 `Promise`<[`ProtocolState`](ProtocolState.md)\>
-
-#### Defined in
-
-[state/protocol.ts:26](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/protocol.ts#L26)

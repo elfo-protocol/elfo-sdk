@@ -31,10 +31,6 @@ Helper function to generate subscription author PDA Address
 
 PDA of the subscription author account
 
-#### Defined in
-
-[state/subscriptionPlanAuthor.ts:46](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscriptionPlanAuthor.ts#L46)
-
 ___
 
 ### from
@@ -53,7 +49,3 @@ Fetches a subscription plan author instance from a public key
 #### Returns
 
 `Promise`<[`SubscriptionPlanAuthor`](SubscriptionPlanAuthor.md)\>
-
-#### Defined in
-
-[state/subscriptionPlanAuthor.ts:24](https://github.com/subrina-protocol/subrina-sdk/blob/34b4542/src/state/subscriptionPlanAuthor.ts#L24)
