@@ -10,6 +10,7 @@ Represents a subscriber account
 
 - [authority](Subscriber.md#authority)
 - [hasAlreadyBeenInitialized](Subscriber.md#hasalreadybeeninitialized)
+- [publicKey](Subscriber.md#publickey)
 - [subscriberPaymentAccount](Subscriber.md#subscriberpaymentaccount)
 - [subscriptionAccounts](Subscriber.md#subscriptionaccounts)
 
@@ -29,6 +30,12 @@ ___
 ### hasAlreadyBeenInitialized
 
 • **hasAlreadyBeenInitialized**: `boolean`
+
+___
+
+### publicKey
+
+• **publicKey**: `string`
 
 ___
 
@@ -78,10 +85,10 @@ Fetches a subscriber instance from a public key
 
 #### Parameters
 
-| Name                  | Type      | Description                                     |
-|:----------------------|:----------|:------------------------------------------------|
-| `subscriberPublicKey` | `string`  | Public key of the subscription in base58 format |
-| `provider`            | `default` | Anchor connection provider                      |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `subscriberPublicKey` | `string` | Public key of the subscription in base58 format |
+| `provider` | `default` | Anchor connection provider |
 
 #### Returns
 

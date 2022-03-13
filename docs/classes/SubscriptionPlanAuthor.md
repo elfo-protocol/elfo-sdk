@@ -6,10 +6,41 @@ Represents a subscription plan author account
 
 ## Table of contents
 
+### Properties
+
+- [authority](SubscriptionPlanAuthor.md#authority)
+- [hasAlreadyBeenInitialized](SubscriptionPlanAuthor.md#hasalreadybeeninitialized)
+- [publicKey](SubscriptionPlanAuthor.md#publickey)
+- [subscriptionPlanAccounts](SubscriptionPlanAuthor.md#subscriptionplanaccounts)
+
 ### Methods
 
 - [address](SubscriptionPlanAuthor.md#address)
 - [from](SubscriptionPlanAuthor.md#from)
+
+## Properties
+
+### authority
+
+• **authority**: `string`
+
+___
+
+### hasAlreadyBeenInitialized
+
+• **hasAlreadyBeenInitialized**: `boolean`
+
+___
+
+### publicKey
+
+• **publicKey**: `string`
+
+___
+
+### subscriptionPlanAccounts
+
+• **subscriptionPlanAccounts**: `string`[]
 
 ## Methods
 

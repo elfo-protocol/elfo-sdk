@@ -12,6 +12,7 @@ Represents a elfo node account
 - [isRegistered](ElfoNode.md#isregistered)
 - [nodePaymentAccount](ElfoNode.md#nodepaymentaccount)
 - [nodePaymentWallet](ElfoNode.md#nodepaymentwallet)
+- [publicKey](ElfoNode.md#publickey)
 
 ### Methods
 
@@ -41,6 +42,12 @@ ___
 ### nodePaymentWallet
 
 • **nodePaymentWallet**: `string`
+
+___
+
+### publicKey
+
+• **publicKey**: `string`
 
 ## Methods
 

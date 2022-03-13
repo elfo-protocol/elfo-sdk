@@ -9,6 +9,11 @@ const { PublicKey } = anchor.web3;
  * Represents a subscription plan author account
  */
 export class SubscriptionPlanAuthor {
+  public publicKey: string;
+  public hasAlreadyBeenInitialized: boolean;
+  public authority: string;
+  public subscriptionPlanAccounts: string[];
+
   /**
    * @ignore
    */
@@ -30,9 +35,10 @@ export class SubscriptionPlanAuthor {
     const { hasAlreadyBeenInitialized, authority, subscriptionPlanAccounts } = subscriptionPlanAuthor;
 
     return {
+      publicKey: subscriptionPlanAuthorPublicKey,
       hasAlreadyBeenInitialized,
-      authority,
-      subscriptionPlanAccounts,
+      authority: authority.toBase58(),
+      subscriptionPlanAccounts: subscriptionPlanAccounts.map((s) => s.toBase58()),
     };
   };
 

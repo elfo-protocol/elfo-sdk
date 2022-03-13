@@ -14,6 +14,7 @@ Represents a subscription account
 - [isCancelled](Subscription.md#iscancelled)
 - [lastPaymentTimestamp](Subscription.md#lastpaymenttimestamp)
 - [nextPaymentTimestamp](Subscription.md#nextpaymenttimestamp)
+- [publicKey](Subscription.md#publickey)
 - [subscriber](Subscription.md#subscriber)
 - [subscriptionPlan](Subscription.md#subscriptionplan)
 
@@ -57,6 +58,12 @@ ___
 ### nextPaymentTimestamp
 
 • **nextPaymentTimestamp**: `number`
+
+___
+
+### publicKey
+
+• **publicKey**: `string`
 
 ___
 

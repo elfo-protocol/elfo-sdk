@@ -14,6 +14,7 @@ Represents a subscription plan
 - [hasAlreadyBeenInitialized](SubscriptionPlan.md#hasalreadybeeninitialized)
 - [isActive](SubscriptionPlan.md#isactive)
 - [planName](SubscriptionPlan.md#planname)
+- [publicKey](SubscriptionPlan.md#publickey)
 - [subscriptionAccounts](SubscriptionPlan.md#subscriptionaccounts)
 - [subscriptionPlanAuthor](SubscriptionPlan.md#subscriptionplanauthor)
 - [subscriptionPlanPaymentAccount](SubscriptionPlan.md#subscriptionplanpaymentaccount)
@@ -58,6 +59,12 @@ ___
 ### planName
 
 • **planName**: `string`
+
+___
+
+### publicKey
+
+• **publicKey**: `string`
 
 ___
 

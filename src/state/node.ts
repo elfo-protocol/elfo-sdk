@@ -9,6 +9,7 @@ const utf8 = anchor.utils.bytes.utf8;
  * Represents a elfo node account
  */
 export class ElfoNode {
+  public publicKey: string;
   public isRegistered: boolean;
   public authority: string;
   public nodePaymentWallet: string;
@@ -39,6 +40,7 @@ export class ElfoNode {
     const { isRegistered, authority, nodePaymentWallet, nodePaymentAccount } = node;
 
     return {
+      publicKey: nodePublicKey,
       isRegistered,
       authority: authority.toBase58(),
       nodePaymentWallet: nodePaymentWallet.toBase58(),

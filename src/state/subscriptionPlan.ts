@@ -9,6 +9,7 @@ const utf8 = anchor.utils.bytes.utf8;
  * Represents a subscription plan
  */
 export class SubscriptionPlan {
+  public publicKey: string;
   public hasAlreadyBeenInitialized: boolean;
   public planName: string;
   public subscriptionPlanAuthor: string;
@@ -47,6 +48,7 @@ export class SubscriptionPlan {
     } = plan;
 
     return {
+      publicKey: subscriptionPlanPublicKey,
       hasAlreadyBeenInitialized,
       planName,
       subscriptionPlanAuthor: subscriptionPlanAuthor.toBase58(),
