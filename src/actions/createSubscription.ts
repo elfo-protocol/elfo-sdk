@@ -1,11 +1,12 @@
 import { Provider, BN } from '@project-serum/anchor';
-import { PublicKey, SystemProgram, SYSVAR_RENT_PUBKEY, Transaction } from '@solana/web3.js';
+import * as anchor from '@project-serum/anchor/';
 import { getProgram } from '../program';
 import { ASSOCIATED_TOKEN_PROGRAM_ID, getAssociatedTokenAddress, TOKEN_PROGRAM_ID } from '@solana/spl-token';
 import { DEFAULT_USDC_MINT } from '../constants';
 import { SubscriptionPlanAuthor } from '../state/subscriptionPlanAuthor';
 import { SubscriptionPlan } from '../state/subscriptionPlan';
 import { ELFO_PROTOCOL_STATE } from '../constants';
+const { SystemProgram, SYSVAR_RENT_PUBKEY, Transaction } = anchor.web3;
 
 /**
  * Creates a subscription plan
@@ -15,17 +16,17 @@ import { ELFO_PROTOCOL_STATE } from '../constants';
  * @param amount Subscription amount without decimals
  * @param frequency Subscription frequency in seconds
  * @param feePercentage Fee percentage for plan (minimum 1, maximum 5)
+ * @returns Base58 public key tuple [subscriptionPlan, subscriptionPlanAuthor] of plan and plan author
  *
  * @example
  * ```typescript
+ * const provider: Provider = getProvider();
  * const name = "SEO course"
  * const amount = 20 // 20 USD
  * const frequency = 60 * 60 * 24 * 30 // 1 month
  * const feePercentage = 2;
  * const [plan, author] = await createSubscription(provider, name, frequency, feePercentage);
  * ```
- *
- * @returns Public key tuple [subscriptionPlan, subscriptionPlanAuthor] of plan and plan author
  */
 export const createSubscription = async (
   provider: Provider,
@@ -33,10 +34,10 @@ export const createSubscription = async (
   amount: number,
   frequency: number,
   feePercentage: number,
-): Promise<[PublicKey, PublicKey]> => {
+): Promise<[string, string]> => {
   const program = getProgram(provider);
-  const subscriptionPlanAuthor = await SubscriptionPlanAuthor.address(provider.wallet.publicKey);
-  const subscriptionPlan = await SubscriptionPlan.address(name, subscriptionPlanAuthor);
+  const subscriptionPlanAuthor = SubscriptionPlanAuthor.address(provider.wallet.publicKey.toBase58());
+  const subscriptionPlan = SubscriptionPlan.address(name, subscriptionPlanAuthor);
 
   const ix = program.instruction.createSubscriptionPlan(
     name,

@@ -1,4 +1,3 @@
-import { PublicKey } from '@solana/web3.js';
 import { Provider } from '@project-serum/anchor';
 import { getProgram } from '../program';
 import { ELFO_PROTOCOL_STATE } from '../constants';
@@ -8,9 +7,9 @@ import { ELFO_PROTOCOL_STATE } from '../constants';
  */
 export class ProtocolState {
   public hasAlreadyBeenInitialized: boolean;
-  public authority: PublicKey;
-  public subscriptionPlanAccounts: PublicKey[];
-  public registeredNodes: PublicKey[];
+  public authority: string;
+  public subscriptionPlanAccounts: string[];
+  public registeredNodes: string[];
 
   /**
    * @ignore
@@ -29,9 +28,9 @@ export class ProtocolState {
     const { hasAlreadyBeenInitialized, authority, subscriptionPlanAccounts, registeredNodes } = protocol;
     return {
       hasAlreadyBeenInitialized,
-      authority,
-      subscriptionPlanAccounts,
-      registeredNodes,
+      authority: authority.toBase58(),
+      subscriptionPlanAccounts: subscriptionPlanAccounts.map((a) => a.toBase58()),
+      registeredNodes: registeredNodes.map((r) => r.toBase58()),
     };
   };
 }

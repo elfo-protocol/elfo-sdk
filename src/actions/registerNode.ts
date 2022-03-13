@@ -1,35 +1,36 @@
 import { Provider } from '@project-serum/anchor';
-import { PublicKey, SystemProgram, SYSVAR_RENT_PUBKEY, Transaction } from '@solana/web3.js';
+import * as anchor from '@project-serum/anchor';
 import { getProgram } from '../program';
 import { ASSOCIATED_TOKEN_PROGRAM_ID, getAssociatedTokenAddress, TOKEN_PROGRAM_ID } from '@solana/spl-token';
 import { DEFAULT_USDC_MINT } from '../constants';
 import { ElfoNode } from '../state/node';
 import { ELFO_PROTOCOL_STATE } from '../constants';
+const { PublicKey, SystemProgram, SYSVAR_RENT_PUBKEY, Transaction } = anchor.web3;
 
 /**
  * Registers a node that monitor subscriptions
  *
  * @param provider Anchor connection provider
- * @param nodePaymentWallet Payment wallet of node
+ * @param nodePaymentWallet Payment wallet of node in base58 string format
+ * @returns Node public key in base58 string format
  *
  * @example
  * ```typescript
- * const nodePaymentWallet = new PublicKey("8RsVYhJqtS96mnEfaSY2fKBQRdWDg6KZ6BWZrR1biS8i");
- * const nodeAddress: PublicKey = await registerNode(provider, nodePaymentWallet);
+ * const provider: Provider = getProvider();
+ * const nodePaymentWallet: PublicKey = getNodePaymentWallet();
+ * const nodeAddress: string = await registerNode(provider, nodePaymentWallet.toBase58());
  * ```
- *
- * @returns Node public key
  */
-export const registerNode = async (provider: Provider, nodePaymentWallet: PublicKey): Promise<PublicKey> => {
+export const registerNode = async (provider: Provider, nodePaymentWallet: string): Promise<string> => {
   const program = getProgram(provider);
-  const node = await ElfoNode.address(provider.wallet.publicKey);
+  const node = ElfoNode.address(provider.wallet.publicKey.toBase58());
   const ix = program.instruction.registerNode({
     accounts: {
       mint: DEFAULT_USDC_MINT,
       associatedTokenProgram: ASSOCIATED_TOKEN_PROGRAM_ID,
-      node,
-      nodePaymentWallet,
-      nodePaymentAccount: await getAssociatedTokenAddress(DEFAULT_USDC_MINT, nodePaymentWallet),
+      node: new PublicKey(node),
+      nodePaymentWallet: new PublicKey(nodePaymentWallet),
+      nodePaymentAccount: await getAssociatedTokenAddress(DEFAULT_USDC_MINT, new PublicKey(nodePaymentWallet)),
       tokenProgram: TOKEN_PROGRAM_ID,
       protocolState: ELFO_PROTOCOL_STATE,
       rent: SYSVAR_RENT_PUBKEY,

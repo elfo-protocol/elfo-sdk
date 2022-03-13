@@ -21,7 +21,7 @@ Represents the elfo protocol state account
 
 ### authority
 
-• **authority**: `PublicKey`
+• **authority**: `string`
 
 ___
 
@@ -33,13 +33,13 @@ ___
 
 ### registeredNodes
 
-• **registeredNodes**: `PublicKey`[]
+• **registeredNodes**: `string`[]
 
 ___
 
 ### subscriptionPlanAccounts
 
-• **subscriptionPlanAccounts**: `PublicKey`[]
+• **subscriptionPlanAccounts**: `string`[]
 
 ## Methods
 

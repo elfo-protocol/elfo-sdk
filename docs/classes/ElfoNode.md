@@ -22,7 +22,7 @@ Represents a elfo node account
 
 ### authority
 
-• **authority**: `PublicKey`
+• **authority**: `string`
 
 ___
 
@@ -34,33 +34,39 @@ ___
 
 ### nodePaymentAccount
 
-• **nodePaymentAccount**: `PublicKey`
+• **nodePaymentAccount**: `string`
 
 ___
 
 ### nodePaymentWallet
 
-• **nodePaymentWallet**: `PublicKey`
+• **nodePaymentWallet**: `string`
 
 ## Methods
 
 ### address
 
-▸ `Static` **address**(`authority`): `Promise`<`PublicKey`\>
+▸ `Static` **address**(`authority`): `string`
 
 Helper function to generate node PDA Address
+
+**`example`**
+```typescript
+const provider: Provider = getProvider();
+const nodeAddress: string = ElfoNode.address(provider.wallet.publicKey.toBase58());
+```
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `authority` | `PublicKey` | Public Key of node authority |
+| `authority` | `string` | Public Key of node authority in base58 format |
 
 #### Returns
 
-`Promise`<`PublicKey`\>
+`string`
 
-PDA of the node
+PDA of the node in base58 format
 
 ___
 
@@ -70,11 +76,18 @@ ___
 
 Fetches a node instance from a public key
 
+**`example`**
+```typescript
+const provider: Provider = getProvider();
+const nodeAddress: string = ElfoNode.address(provider.wallet.publicKey.toBase58());
+const node: ElfoNode = ElfoNode.from(nodeAddress, provider);
+```
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `nodePublicKey` | `PublicKey` | Public key of the node |
+| `nodePublicKey` | `string` | Public key of the node |
 | `provider` | `default` | Anchor connection provider |
 
 #### Returns

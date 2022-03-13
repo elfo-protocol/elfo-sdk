@@ -1,5 +1,5 @@
 import { Provider, BN } from '@project-serum/anchor';
-import { PublicKey, SystemProgram, SYSVAR_RENT_PUBKEY, Transaction, SYSVAR_CLOCK_PUBKEY } from '@solana/web3.js';
+import * as anchor from '@project-serum/anchor/';
 import { getProgram } from '../program';
 import { getAssociatedTokenAddress, TOKEN_PROGRAM_ID } from '@solana/spl-token';
 import { SubscriptionPlan } from '../state/subscriptionPlan';
@@ -8,31 +8,32 @@ import { ASSOCIATED_PROGRAM_ID } from '@project-serum/anchor/dist/cjs/utils/toke
 import { Subscriber } from '../state/subscriber';
 import { Subscription } from '../state/subscription';
 import { ELFO_PROTOCOL_SIGNER } from '../constants';
+const { PublicKey, SystemProgram, SYSVAR_RENT_PUBKEY, Transaction, SYSVAR_CLOCK_PUBKEY } = anchor.web3;
 
 /**
  * Subscribe to a subscription plan
  *
  * @param provider Anchor connection provider
- * @param subscriptionPlan Subscription plan to subscribe
+ * @param subscriptionPlan Subscription plan public key in base58 string format
  * @param numberOfCycles  number of cycle to delegate funds
+ * @returns Subscription public key in base58 string format
  *
  * @example
  * ```typescript
- * const subscriptionPlan: PublicKey = new PublicKey("E1Q62AgA77TuFFHPJxmcRXcD2tgsSsMEwEL3kxd17MfA");
- * const subscription: PublicKey = await subscribe(provider, subscriptionPlan);
+ * const provider: Provider = getProvider();
+ * const subscriptionPlan: PublicKey = getSubscriptionPlanPublicKey();
+ * const subscription: string = await subscribe(provider, subscriptionPlan.toBase58());
  * ```
- *
- * @returns Subscription public key
  */
 export const subscribe = async (
   provider: Provider,
-  subscriptionPlan: PublicKey,
+  subscriptionPlan: string,
   numberOfCycles?: number,
-): Promise<PublicKey> => {
+): Promise<string> => {
   const cyclesToDelegateFunds = numberOfCycles ? numberOfCycles : 1000;
   const program = getProgram(provider);
-  const subscriber = await Subscriber.address(provider.wallet.publicKey);
-  const subscription = await Subscription.address(subscriber, subscriptionPlan);
+  const subscriber = new PublicKey(Subscriber.address(provider.wallet.publicKey.toBase58()));
+  const subscription = new PublicKey(Subscription.address(subscriber.toBase58(), subscriptionPlan));
 
   const plan = await SubscriptionPlan.from(subscriptionPlan, provider);
 
@@ -43,7 +44,7 @@ export const subscribe = async (
       whoSubscribes: provider.wallet.publicKey,
       subscriptionPlanPaymentAccount: plan.subscriptionPlanPaymentAccount,
       protocolSigner: ELFO_PROTOCOL_SIGNER,
-      subscriptionPlan,
+      subscriptionPlan: new PublicKey(subscriptionPlan),
       subscription,
       subscriberPaymentAccount: await getAssociatedTokenAddress(DEFAULT_USDC_MINT, provider.wallet.publicKey),
       subscriber,
@@ -61,5 +62,5 @@ export const subscribe = async (
 
   await provider.wallet.signTransaction(tx);
   await provider.send(tx);
-  return subscriber;
+  return subscriber.toBase58();
 };

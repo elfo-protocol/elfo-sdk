@@ -12,6 +12,7 @@
   "private": false,
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.0.6",
     "@rollup/plugin-replace": "^3.0.0",
     "@rollup/plugin-typescript": "^8.3.0",
@@ -39,8 +40,7 @@
   },
   "dependencies": {
     "@project-serum/anchor": "^0.22.1",
-    "@solana/spl-token": "^0.2.0",
-    "@solana/web3.js": "^1.17.0"
+    "@solana/spl-token": "^0.2.0"
   },
   "husky": {
     "hooks": {

@@ -63,25 +63,25 @@ ___
 
 ### subscriptionAccounts
 
-• **subscriptionAccounts**: `PublicKey`[]
+• **subscriptionAccounts**: `string`[]
 
 ___
 
 ### subscriptionPlanAuthor
 
-• **subscriptionPlanAuthor**: `PublicKey`
+• **subscriptionPlanAuthor**: `string`
 
 ___
 
 ### subscriptionPlanPaymentAccount
 
-• **subscriptionPlanPaymentAccount**: `PublicKey`
+• **subscriptionPlanPaymentAccount**: `string`
 
 ## Methods
 
 ### address
 
-▸ `Static` **address**(`planName`, `planAuthor`): `Promise`<`PublicKey`\>
+▸ `Static` **address**(`planName`, `planAuthor`): `string`
 
 Helper function to generate subscription plan PDA Address
 
@@ -90,11 +90,11 @@ Helper function to generate subscription plan PDA Address
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `planName` | `string` | subscription plan name |
-| `planAuthor` | `PublicKey` | subscription plan author account address |
+| `planAuthor` | `string` | subscription plan author account address |
 
 #### Returns
 
-`Promise`<`PublicKey`\>
+`string`
 
 PDA of the subscription plan account
 
@@ -110,7 +110,7 @@ Fetches a subscription plan instance from a public key
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `subscriptionPlanPublicKey` | `PublicKey` | Public key of the subscription |
+| `subscriptionPlanPublicKey` | `string` | Public key of the subscription |
 | `provider` | `default` | Anchor connection provider |
 
 #### Returns

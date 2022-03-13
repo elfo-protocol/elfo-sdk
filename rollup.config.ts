@@ -3,6 +3,7 @@ import typescript from '@rollup/plugin-typescript';
 import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
+import json from '@rollup/plugin-json';
 
 const env = process.env.NODE_ENV;
 
@@ -30,12 +31,13 @@ export default {
         'process.env.BROWSER': JSON.stringify(true),
       },
     }),
+    json(),
     terser(),
   ],
-  external: ['@project-serum/anchor', '@solana/spl-token', '@solana/web3.js'],
+  external: ['@project-serum/anchor', '@solana/spl-token'],
   output: {
     file: 'dist/browser/index.js',
-    format: 'amd',
+    format: 'es',
     sourcemap: true,
   },
 };

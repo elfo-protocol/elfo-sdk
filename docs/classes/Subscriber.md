@@ -22,7 +22,7 @@ Represents a subscriber account
 
 ### authority
 
-• **authority**: `PublicKey`
+• **authority**: `string`
 
 ___
 
@@ -34,33 +34,39 @@ ___
 
 ### subscriberPaymentAccount
 
-• **subscriberPaymentAccount**: `PublicKey`
+• **subscriberPaymentAccount**: `string`
 
 ___
 
 ### subscriptionAccounts
 
-• **subscriptionAccounts**: `PublicKey`[]
+• **subscriptionAccounts**: `string`[]
 
 ## Methods
 
 ### address
 
-▸ `Static` **address**(`authority`): `Promise`<`PublicKey`\>
+▸ `Static` **address**(`authority`): `string`
 
 Helper function to generate subscriber PDA Address
+
+**`example`**
+```typescript
+const provider: Provider = getProvider();
+const nodeAddress: string = ElfoNode.address(provider.wallet.publicKey.toBase58());
+```
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `authority` | `PublicKey` | Public Key of subscriber authority |
+| `authority` | `string` | Public Key of subscriber authority |
 
 #### Returns
 
-`Promise`<`PublicKey`\>
+`string`
 
-PDA of the subscriber account
+PDA of the subscriber account in base58 format
 
 ___
 
@@ -72,10 +78,10 @@ Fetches a subscriber instance from a public key
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `subscriberPublicKey` | `PublicKey` | Public key of the subscription |
-| `provider` | `default` | Anchor connection provider |
+| Name                  | Type      | Description                                     |
+|:----------------------|:----------|:------------------------------------------------|
+| `subscriberPublicKey` | `string`  | Public key of the subscription in base58 format |
+| `provider`            | `default` | Anchor connection provider                      |
 
 #### Returns
 

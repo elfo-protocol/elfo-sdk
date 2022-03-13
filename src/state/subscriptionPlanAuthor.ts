@@ -1,9 +1,9 @@
-import { PublicKey } from '@solana/web3.js';
 import { Provider } from '@project-serum/anchor';
 import { getProgram } from '../program';
 import { ELFO_PROTOCOL_PROGRAM_ID } from '../constants';
 import * as anchor from '@project-serum/anchor';
 const utf8 = anchor.utils.bytes.utf8;
+const { PublicKey } = anchor.web3;
 
 /**
  * Represents a subscription plan author account
@@ -22,7 +22,7 @@ export class SubscriptionPlanAuthor {
    *
    */
   public static from = async (
-    subscriptionPlanAuthorPublicKey: PublicKey,
+    subscriptionPlanAuthorPublicKey: string,
     provider: Provider,
   ): Promise<SubscriptionPlanAuthor> => {
     const program = getProgram(provider);
@@ -43,11 +43,11 @@ export class SubscriptionPlanAuthor {
    *
    * @returns PDA of the subscription author account
    */
-  public static address = async (authority: PublicKey): Promise<PublicKey> => {
-    const [subscriptionPlanAuthor] = await PublicKey.findProgramAddress(
-      [utf8.encode('subscription_plan_author'), authority.toBuffer()],
+  public static address = (authority: string): string => {
+    const [subscriptionPlanAuthor] = anchor.utils.publicKey.findProgramAddressSync(
+      [utf8.encode('subscription_plan_author'), new PublicKey(authority).toBuffer()],
       ELFO_PROTOCOL_PROGRAM_ID,
     );
-    return subscriptionPlanAuthor;
+    return subscriptionPlanAuthor.toBase58();
   };
 }

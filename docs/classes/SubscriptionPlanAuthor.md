@@ -15,7 +15,7 @@ Represents a subscription plan author account
 
 ### address
 
-▸ `Static` **address**(`authority`): `Promise`<`PublicKey`\>
+▸ `Static` **address**(`authority`): `string`
 
 Helper function to generate subscription author PDA Address
 
@@ -23,11 +23,11 @@ Helper function to generate subscription author PDA Address
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `authority` | `PublicKey` | Creator of the subscription plan |
+| `authority` | `string` | Creator of the subscription plan |
 
 #### Returns
 
-`Promise`<`PublicKey`\>
+`string`
 
 PDA of the subscription author account
 
@@ -43,7 +43,7 @@ Fetches a subscription plan author instance from a public key
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `subscriptionPlanAuthorPublicKey` | `PublicKey` | Public key of the subscription plan author |
+| `subscriptionPlanAuthorPublicKey` | `string` | Public key of the subscription plan author |
 | `provider` | `default` | Anchor connection provider |
 
 #### Returns

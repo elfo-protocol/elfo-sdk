@@ -1,25 +1,26 @@
 import { Provider } from '@project-serum/anchor';
-import { PublicKey, Transaction } from '@solana/web3.js';
+import * as anchor from '@project-serum/anchor/';
 import { getProgram } from '../program';
 import { Subscriber } from '../state/subscriber';
 import { Subscription } from '../state/subscription';
-
+const { PublicKey, Transaction } = anchor.web3;
 /**
  * Unsubscribe from a subscription plan
  *
  * @param provider Anchor connection provider
- * @param subscriptionPlan Subscription plan to unsubscribe from
+ * @param subscriptionPlan Subscription plan public key in base58 string format
  *
  * @example
  * ```typescript
- * const subscriptionPlan: PublicKey = new PublicKey("E1Q62AgA77TuFFHPJxmcRXcD2tgsSsMEwEL3kxd17MfA");
- * await unsubscribe(provider, subscriptionPlan);
+ * const provider: Provider = getProvider();
+ * const subscriptionPlan: PublicKey = getSubscriptionPlanPublicKey();
+ * await unsubscribe(provider, subscriptionPlan.toBase58());
  * ```
  */
-export const unsubscribe = async (provider: Provider, subscriptionPlan: PublicKey): Promise<void> => {
+export const unsubscribe = async (provider: Provider, subscriptionPlan: string): Promise<void> => {
   const program = getProgram(provider);
-  const subscriber = await Subscriber.address(provider.wallet.publicKey);
-  const subscription = await Subscription.address(subscriber, subscriptionPlan);
+  const subscriber = new PublicKey(Subscriber.address(provider.wallet.publicKey.toBase58()));
+  const subscription = new PublicKey(Subscription.address(subscriber.toBase58(), subscriptionPlan));
 
   const ix = program.instruction.unsubscribe({
     accounts: {

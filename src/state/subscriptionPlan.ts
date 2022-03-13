@@ -1,8 +1,8 @@
-import { PublicKey } from '@solana/web3.js';
 import { BN, Provider } from '@project-serum/anchor';
 import { getProgram } from '../program';
 import { ELFO_PROTOCOL_PROGRAM_ID } from '../constants';
 import * as anchor from '@project-serum/anchor';
+const { PublicKey } = anchor.web3;
 const utf8 = anchor.utils.bytes.utf8;
 
 /**
@@ -11,13 +11,13 @@ const utf8 = anchor.utils.bytes.utf8;
 export class SubscriptionPlan {
   public hasAlreadyBeenInitialized: boolean;
   public planName: string;
-  public subscriptionPlanAuthor: PublicKey;
-  public subscriptionPlanPaymentAccount: PublicKey;
+  public subscriptionPlanAuthor: string;
+  public subscriptionPlanPaymentAccount: string;
   public amount: BN;
   public frequency: BN;
   public isActive: boolean;
   public feePercentage: number;
-  public subscriptionAccounts: PublicKey[];
+  public subscriptionAccounts: string[];
 
   /**
    * @ignore
@@ -31,7 +31,7 @@ export class SubscriptionPlan {
    * @param provider Anchor connection provider
    *
    */
-  public static from = async (subscriptionPlanPublicKey: PublicKey, provider: Provider): Promise<SubscriptionPlan> => {
+  public static from = async (subscriptionPlanPublicKey: string, provider: Provider): Promise<SubscriptionPlan> => {
     const program = getProgram(provider);
     const plan = await program.account.subscriptionPlan.fetch(subscriptionPlanPublicKey);
     const {
@@ -49,13 +49,13 @@ export class SubscriptionPlan {
     return {
       hasAlreadyBeenInitialized,
       planName,
-      subscriptionPlanAuthor,
-      subscriptionPlanPaymentAccount,
+      subscriptionPlanAuthor: subscriptionPlanAuthor.toBase58(),
+      subscriptionPlanPaymentAccount: subscriptionPlanPaymentAccount.toBase58(),
       amount,
       frequency,
       isActive,
       feePercentage,
-      subscriptionAccounts,
+      subscriptionAccounts: subscriptionAccounts.map((a) => a.toBase58()),
     };
   };
 
@@ -67,11 +67,11 @@ export class SubscriptionPlan {
    *
    * @returns PDA of the subscription plan account
    */
-  public static address = async (planName: string, planAuthor: PublicKey): Promise<PublicKey> => {
-    const [subscriptionPlan] = await PublicKey.findProgramAddress(
-      [utf8.encode('subscription_plan'), utf8.encode(planName), planAuthor.toBuffer()],
+  public static address = (planName: string, planAuthor: string): string => {
+    const [subscriptionPlan] = anchor.utils.publicKey.findProgramAddressSync(
+      [utf8.encode('subscription_plan'), utf8.encode(planName), new PublicKey(planAuthor).toBuffer()],
       ELFO_PROTOCOL_PROGRAM_ID,
     );
-    return subscriptionPlan;
+    return subscriptionPlan.toBase58();
   };
 }

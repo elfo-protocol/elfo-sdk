@@ -55,12 +55,13 @@ ___
 
 ### createSubscription
 
-▸ **createSubscription**(`provider`, `name`, `amount`, `frequency`, `feePercentage`): `Promise`<[`PublicKey`, `PublicKey`]\>
+▸ **createSubscription**(`provider`, `name`, `amount`, `frequency`, `feePercentage`): `Promise`<[`string`, `string`]\>
 
 Creates a subscription plan
 
 **`example`**
 ```typescript
+const provider: Provider = getProvider();
 const name = "SEO course"
 const amount = 20 // 20 USD
 const frequency = 60 * 60 * 24 * 30 // 1 month
@@ -80,22 +81,23 @@ const [plan, author] = await createSubscription(provider, name, frequency, feePe
 
 #### Returns
 
-`Promise`<[`PublicKey`, `PublicKey`]\>
+`Promise`<[`string`, `string`]\>
 
-Public key tuple [subscriptionPlan, subscriptionPlanAuthor] of plan and plan author
+Base58 public key tuple [subscriptionPlan, subscriptionPlanAuthor] of plan and plan author
 
 ___
 
 ### registerNode
 
-▸ **registerNode**(`provider`, `nodePaymentWallet`): `Promise`<`PublicKey`\>
+▸ **registerNode**(`provider`, `nodePaymentWallet`): `Promise`<`string`\>
 
 Registers a node that monitor subscriptions
 
 **`example`**
 ```typescript
-const nodePaymentWallet = new PublicKey("8RsVYhJqtS96mnEfaSY2fKBQRdWDg6KZ6BWZrR1biS8i");
-const nodeAddress: PublicKey = await registerNode(provider, nodePaymentWallet);
+const provider: Provider = getProvider();
+const nodePaymentWallet: PublicKey = getNodePaymentWallet();
+const nodeAddress: string = await registerNode(provider, nodePaymentWallet.toBase58());
 ```
 
 #### Parameters
@@ -103,26 +105,27 @@ const nodeAddress: PublicKey = await registerNode(provider, nodePaymentWallet);
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `provider` | `default` | Anchor connection provider |
-| `nodePaymentWallet` | `PublicKey` | Payment wallet of node |
+| `nodePaymentWallet` | `string` | Payment wallet of node in base58 string format |
 
 #### Returns
 
-`Promise`<`PublicKey`\>
+`Promise`<`string`\>
 
-Node public key
+Node public key in base58 string format
 
 ___
 
 ### subscribe
 
-▸ **subscribe**(`provider`, `subscriptionPlan`, `numberOfCycles?`): `Promise`<`PublicKey`\>
+▸ **subscribe**(`provider`, `subscriptionPlan`, `numberOfCycles?`): `Promise`<`string`\>
 
 Subscribe to a subscription plan
 
 **`example`**
 ```typescript
-const subscriptionPlan: PublicKey = new PublicKey("E1Q62AgA77TuFFHPJxmcRXcD2tgsSsMEwEL3kxd17MfA");
-const subscription: PublicKey = await subscribe(provider, subscriptionPlan);
+const provider: Provider = getProvider();
+const subscriptionPlan: PublicKey = getSubscriptionPlanPublicKey();
+const subscription: string = await subscribe(provider, subscriptionPlan.toBase58());
 ```
 
 #### Parameters
@@ -130,14 +133,14 @@ const subscription: PublicKey = await subscribe(provider, subscriptionPlan);
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `provider` | `default` | Anchor connection provider |
-| `subscriptionPlan` | `PublicKey` | Subscription plan to subscribe |
+| `subscriptionPlan` | `string` | Subscription plan public key in base58 string format |
 | `numberOfCycles?` | `number` | number of cycle to delegate funds |
 
 #### Returns
 
-`Promise`<`PublicKey`\>
+`Promise`<`string`\>
 
-Subscription public key
+Subscription public key in base58 string format
 
 ___
 
@@ -149,8 +152,9 @@ Tries to trigger payment of a subscription.
 
 **`example`**
 ```typescript
+const provider: Provider = getProvider();
 const subscription: PublicKey = new PublicKey("E1Q62AgA77TuFFHPJxmcRXcD2tgsSsMEwEL3kxd17MfA");
-await triggerPayment(provider, subscription);
+await triggerPayment(provider, subscription.toBase58());
 ```
 
 #### Parameters
@@ -158,7 +162,7 @@ await triggerPayment(provider, subscription);
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `provider` | `default` | Anchor connection provider |
-| `subscription` | `PublicKey` | Subscription to try trigger payment |
+| `subscription` | `string` | Subscription public key in base58 format` |
 
 #### Returns
 
@@ -174,8 +178,9 @@ Unsubscribe from a subscription plan
 
 **`example`**
 ```typescript
-const subscriptionPlan: PublicKey = new PublicKey("E1Q62AgA77TuFFHPJxmcRXcD2tgsSsMEwEL3kxd17MfA");
-await unsubscribe(provider, subscriptionPlan);
+const provider: Provider = getProvider();
+const subscriptionPlan: PublicKey = getSubscriptionPlanPublicKey();
+await unsubscribe(provider, subscriptionPlan.toBase58());
 ```
 
 #### Parameters
@@ -183,7 +188,7 @@ await unsubscribe(provider, subscriptionPlan);
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `provider` | `default` | Anchor connection provider |
-| `subscriptionPlan` | `PublicKey` | Subscription plan to unsubscribe from |
+| `subscriptionPlan` | `string` | Subscription plan public key in base58 string format |
 
 #### Returns
 

@@ -1,18 +1,19 @@
-import { PublicKey } from '@solana/web3.js';
+import * as anchor from '@project-serum/anchor/';
+const PublicKey = anchor.web3.PublicKey;
 
 /**
  * Program ID of ELFO protocol core program
  */
-export const ELFO_PROTOCOL_PROGRAM_ID = new PublicKey('cHSMTMnhLhXdVqNmMgquztThw4i4LzrFFkzs9umh7ti');
+export const ELFO_PROTOCOL_PROGRAM_ID = new PublicKey('4T5P9n2Wy5f4KreDvXNKB5EBP6tSUe9YcPGJGXHbKJY5');
 
 /**
  *  ELFO Protocol signer account
  */
-export const ELFO_PROTOCOL_SIGNER = new PublicKey('ghNDAU4UmpQCkv6BRYJhXjZhokE4veRqRFywZ59GcD4');
+export const ELFO_PROTOCOL_SIGNER = new PublicKey('566eQNanLXAhYzkWy7zdFehU4htceAcSYWxrBoh77PWj');
 
 /**
  *  Elfo protocol state account
  */
-export const ELFO_PROTOCOL_STATE = new PublicKey('8Lt1AE236wPeNgEUckNUPA6f8cVAuPecxu6ZAxSDPuRU');
+export const ELFO_PROTOCOL_STATE = new PublicKey('7cGUt7fG6Zajki32xw3EhwWYBe9pRdAsjGQBupmeYyff');
 
-export const DEFAULT_USDC_MINT = new PublicKey('91h6FYLoVhMRbp3V5X56ybNBaJp5R4xjfkfgbjgfs2HH');
+export const DEFAULT_USDC_MINT = new PublicKey('3qzpQ72TdVWpUirUaDV1yvwb1nLHkuY22Z3X3u2VRZ43');

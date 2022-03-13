@@ -1,7 +1,8 @@
 import { Provider } from '@project-serum/anchor';
-import { SystemProgram, SYSVAR_RENT_PUBKEY, Transaction } from '@solana/web3.js';
+import * as anchor from '@project-serum/anchor';
 import { getProgram } from '../program';
 import { ELFO_PROTOCOL_STATE, ELFO_PROTOCOL_SIGNER } from '../constants';
+const { SystemProgram, SYSVAR_RENT_PUBKEY, Transaction } = anchor.web3;
 
 /**
  * Initialize an instance of elfo protocol for debugging purposes.

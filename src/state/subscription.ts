@@ -1,8 +1,8 @@
-import { PublicKey } from '@solana/web3.js';
 import { Provider } from '@project-serum/anchor';
 import { getProgram } from '../program';
 import { ELFO_PROTOCOL_PROGRAM_ID } from '../constants';
 import * as anchor from '@project-serum/anchor';
+const { PublicKey } = anchor.web3;
 const utf8 = anchor.utils.bytes.utf8;
 
 /**
@@ -10,8 +10,8 @@ const utf8 = anchor.utils.bytes.utf8;
  */
 export class Subscription {
   public hasAlreadyBeenInitialized: boolean;
-  public subscriber: PublicKey;
-  public subscriptionPlan: PublicKey;
+  public subscriber: string;
+  public subscriptionPlan: string;
   public isActive: boolean;
   public isCancelled: boolean;
   public lastPaymentTimestamp: number;
@@ -30,7 +30,7 @@ export class Subscription {
    * @param provider Anchor connection provider
    *
    */
-  public static from = async (subscriptionPublicKey: PublicKey, provider: Provider): Promise<Subscription> => {
+  public static from = async (subscriptionPublicKey: string, provider: Provider): Promise<Subscription> => {
     const program = getProgram(provider);
     const subscription = await program.account.subscription.fetch(subscriptionPublicKey);
     const {
@@ -46,8 +46,8 @@ export class Subscription {
 
     return {
       hasAlreadyBeenInitialized,
-      subscriber,
-      subscriptionPlan,
+      subscriber: subscriber.toBase58(),
+      subscriptionPlan: subscriptionPlan.toBase58(),
       isActive,
       isCancelled,
       lastPaymentTimestamp: lastPaymentTimestamp.toNumber(),
@@ -64,12 +64,12 @@ export class Subscription {
    *
    * @returns PDA of the subscription account
    */
-  public static address = async (subscriber: PublicKey, subscriptionPlan: PublicKey): Promise<PublicKey> => {
-    const [subscription] = await PublicKey.findProgramAddress(
-      [utf8.encode('subscription'), subscriber.toBuffer(), subscriptionPlan.toBuffer()],
+  public static address = (subscriber: string, subscriptionPlan: string): string => {
+    const [subscription] = anchor.utils.publicKey.findProgramAddressSync(
+      [utf8.encode('subscription'), new PublicKey(subscriber).toBuffer(), new PublicKey(subscriptionPlan).toBuffer()],
       ELFO_PROTOCOL_PROGRAM_ID,
     );
 
-    return subscription;
+    return subscription.toBase58();
   };
 }
