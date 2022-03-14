@@ -4,16 +4,16 @@ const PublicKey = anchor.web3.PublicKey;
 /**
  * Program ID of ELFO protocol core program
  */
-export const ELFO_PROTOCOL_PROGRAM_ID = new PublicKey('4T5P9n2Wy5f4KreDvXNKB5EBP6tSUe9YcPGJGXHbKJY5');
+export const ELFO_PROTOCOL_PROGRAM_ID = new PublicKey('BJgusPC7xJRCGsFcwEwMGExkqdbYRGy3pugoKwkFDzZx');
 
 /**
  *  ELFO Protocol signer account
  */
-export const ELFO_PROTOCOL_SIGNER = new PublicKey('566eQNanLXAhYzkWy7zdFehU4htceAcSYWxrBoh77PWj');
+export const ELFO_PROTOCOL_SIGNER = new PublicKey('82TaHfkjMvEftkuPEVfGh58zy5D2zxEKX8kos2Ry1GKw');
 
 /**
  *  Elfo protocol state account
  */
-export const ELFO_PROTOCOL_STATE = new PublicKey('7cGUt7fG6Zajki32xw3EhwWYBe9pRdAsjGQBupmeYyff');
+export const ELFO_PROTOCOL_STATE = new PublicKey('784JzJn2j6U6e6p2SqvoHDj55bHJa1uaNtVYDuVrGsMw');
 
-export const DEFAULT_USDC_MINT = new PublicKey('3qzpQ72TdVWpUirUaDV1yvwb1nLHkuY22Z3X3u2VRZ43');
+export const DEFAULT_USDC_MINT = new PublicKey('DaCWEs6Aofd2Re2WQnZUATRMr2NJv5YRxwo94dH7GYWj');
