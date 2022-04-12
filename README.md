@@ -39,13 +39,13 @@ This is the Javascript (Typescript) SDK to interact with [elfo protocol programs
 ### yarn
 
 ```
-yarn add @elfo-protocol/sdk
+yarn add @elfo/sdk
 ```
 
 ### npm
 
 ```
-npm -i @elfo-protocol/sdk
+npm -i @elfo/sdk
 ```
 
 ## Usage
